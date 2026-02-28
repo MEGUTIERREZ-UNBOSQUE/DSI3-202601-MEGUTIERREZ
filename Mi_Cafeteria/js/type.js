@@ -399,6 +399,91 @@ function initCounter() {
 
 }
 
+/* Carousel */
+
+function initCarousel() {
+
+  const carousels = document.querySelectorAll('.carousel');
+  if (!carousels.length) return;
+
+  carousels.forEach(carousel => {
+
+    // El track puede estar dentro de un viewport o directo en el carousel
+    const viewport = carousel.querySelector('.carousel__viewport');
+    const track    = carousel.querySelector('.carousel__track');
+    const slides   = carousel.querySelectorAll('.carousel__slide');
+    const btnPrev  = carousel.querySelector('.carousel__btn--prev');
+    const btnNext  = carousel.querySelector('.carousel__btn--next');
+    const dots     = carousel.querySelectorAll('.carousel__dot');
+
+    if (!track || slides.length === 0) return;
+
+    let index = 0;
+
+    // Cuántos slides se ven a la vez (1 mobile, 3 desktop)
+    function visibleCount() {
+      return window.innerWidth >= 769 ? 3 : 1;
+    }
+
+    // Máximo índice al que se puede mover
+    function maxIndex() {
+      return Math.max(0, slides.length - visibleCount());
+    }
+
+    function update() {
+
+      // Mover la pista un slide a la vez
+      // Cada slide mide (100% / visibleCount) del viewport
+      const pct = index * (100 / visibleCount());
+      track.style.transform = `translateX(-${pct}%)`;
+
+      // Actualizar dots
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('carousel__dot--active', i === index);
+      });
+
+    }
+
+    function next() {
+      index = index >= maxIndex() ? 0 : index + 1;
+      update();
+    }
+
+    function prev() {
+      index = index <= 0 ? maxIndex() : index - 1;
+      update();
+    }
+
+    btnNext?.addEventListener('click', next);
+    btnPrev?.addEventListener('click', prev);
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        index = Math.min(i, maxIndex());
+        update();
+      });
+    });
+
+    // Swipe táctil
+    let touchStartX = 0;
+    track.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].clientX;
+    }, { passive: true });
+    track.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) diff > 0 ? next() : prev();
+    }, { passive: true });
+
+    // Recalcular en resize
+    window.addEventListener('resize', update, { passive: true });
+
+    update();
+
+  });
+
+}
+
+
 
 /* Loader inject */
 
@@ -437,4 +522,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmoothAnchors();
   initCounter();
 
+  initCarousel();
 });
