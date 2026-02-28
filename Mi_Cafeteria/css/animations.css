@@ -1,0 +1,8 @@
+/* Animaciones */
+/* Añadir keyframes y transiciones aquí */
+
+@keyframes scrollLine {
+  0% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(8px); opacity: .5; }
+  100% { transform: translateY(0); opacity: 1; }
+}
