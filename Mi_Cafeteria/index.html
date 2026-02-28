@@ -7,86 +7,138 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/animations.css" />
 </head>
-<body>
+<m>
   <!-- Barra de navegación -->
   <header class="navbar" id="navbar">
     <a href="#" class="navbar__logo">Café De La Maison</a>
+
     <nav class="navbar__nav">
-      <a href="#historia">Nuestra Historia</a>
-      <a href="#productos">Menú</a>
-      <a href="#testimonios">Testimonios</a>
-      <a href="#contacto">Contacto</a>
+      <a href="#historia" class="navbar__link">Nuestra Historia</a>
+      <a href="#productos" class="navbar__link">Menú</a>
+      <a href="#testimonios" class="navbar__link">Testimonios</a>
+      <a href="#contacto" class="navbar__link">Contacto</a>
     </nav>
+
     <div class="navbar__actions">
+
       <div class="lang-switch">
-        <button class="lang-btn lang-btn--active" data-lang="es">ES</button>
+        <button class="lang-switch__btn lang-switch__btn--active" data-lang="es">ES</button>
         <span class="lang-switch__separator">|</span>
-        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-switch__btn" data-lang="en">EN</button>
       </div>
-      <button class="btn btn--outline" id="loginBtn">Ingreso</button>
-      <a href="#reservar" class="btn btn--primary">Reservar</a>
+
+      <button class="btn btn--outline navbar__login-btn" id="loginBtn">
+        Ingreso
+      </button>
+
+      <a href="#reservar" class="btn btn--primary navbar__reserve-btn">
+        Reservar
+      </a>
+
     </div>
+
     <button class="navbar__hamburger" id="hamburger" aria-label="Menú">
-      <span></span><span></span><span></span>
+      <span class="navbar__hamburger-line"></span>
+      <span class="navbar__hamburger-line"></span>
+      <span class="navbar__hamburger-line"></span>
     </button>
+
   </header>
 
   <!-- Sección principal -->
   <section class="hero" id="inicio">
+
     <div class="hero__bg"></div>
+
     <div class="hero__content">
+
       <p class="hero__eyebrow">Desde 1998</p>
-      <h1 class="hero__title">Donde cada taza<br />es una historia</h1>
+
+      <h1 class="hero__title">
+        Donde cada taza<br />es una historia
+      </h1>
+
       <p class="hero__subtitle">
         Seleccionamos los mejores granos y perfeccionamos cada proceso
         para ofrecer una experiencia que despierta los sentidos.
       </p>
+
       <div class="hero__ctas">
-        <a href="#productos" class="btn btn--primary btn--lg">Ver Menú</a>
-        <a href="#reservar" class="btn btn--ghost btn--lg">Reservar Mesa</a>
+
+        <a href="#productos" class="btn btn--primary btn--lg hero__cta">
+          Ver Menú
+        </a>
+
+        <a href="#reservar" class="btn btn--ghost btn--lg hero__cta">
+          Reservar Mesa
+        </a>
+
       </div>
+
     </div>
+
     <div class="hero__scroll-hint">
-      <span>Descubrir</span>
+      <span class="hero__scroll-text">Descubrir</span>
       <div class="hero__scroll-line"></div>
     </div>
+
   </section>
 
   <!-- Historia -->
   <section class="historia" id="historia">
     <div class="container">
+
       <div class="historia__grid">
+
         <div class="historia__text">
+
           <span class="historia__label">Nuestra Historia</span>
-          <h2>Desde 1998 transformamos el café en una experiencia.</h2>
-          <p>
+
+          <h2 class="historia__title">
+            Desde 1998 transformamos el café en una experiencia.
+          </h2>
+
+          <p class="historia__paragraph">
             Seleccionamos granos de origen responsable y cuidamos cada
             detalle, desde el tostado hasta el servicio en mesa.
           </p>
-          <p>
+
+          <p class="historia__paragraph">
             Creemos que cada taza debe transmitir tradición, calidad
             y dedicación. Un ritual que conecta personas, culturas y
             momentos.
           </p>
-          <a href="#productos" class="btn btn--primary">Conoce nuestros
-            productos</a>
+
+          <a href="#productos" class="btn btn--primary historia__cta">
+            Conoce nuestros productos
+          </a>
+
         </div>
+
         <div class="historia__visual">
+
           <div class="historia__img-frame">
+
             <div class="historia__img-placeholder"></div>
+
             <div class="historia__badge">
               <span class="historia__badge-number">26</span>
               <span class="historia__badge-text">años de tradición</span>
             </div>
+
           </div>
+
         </div>
+
       </div>
+
     </div>
   </section>
 
   <!-- Productos -->
   <section class="productos" id="productos">
     <div class="container">
+
       <div class="section-header">
         <span class="section-header__label">Nuestros Productos</span>
         <h2 class="section-header__title">Más que café, una experiencia</h2>
@@ -94,30 +146,35 @@
           Un momento de pausa en medio del ritmo diario.
         </p>
       </div>
+
       <div class="productos__grid">
+
         <article class="product-card" data-index="1">
+
           <div class="product-card__img">
             <img
               src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=400&q=80"
               alt="Espresso Clásico" />
           </div>
+
           <div class="product-card__body">
             <h4 class="product-card__title">Espresso Clásico</h4>
             <p class="product-card__desc">
-              Intensidad pura en cada sorbo. Grano de origen único, tostado
-              oscuro.
+              Intensidad pura en cada sorbo. Grano de origen único, tostado oscuro.
             </p>
             <span class="product-card__price">$4.500</span>
           </div>
+
         </article>
-        <article
-          class="product-card product-card--featured"
-          data-index="2">
+
+        <article class="product-card product-card--featured" data-index="2">
+
           <div class="product-card__img">
             <img
               src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&q=80"
               alt="Capuchino Artesanal" />
           </div>
+
           <div class="product-card__body">
             <h4 class="product-card__title">Capuchino Artesanal</h4>
             <p class="product-card__desc">
@@ -125,13 +182,17 @@
             </p>
             <span class="product-card__price">$6.500</span>
           </div>
+
         </article>
+
         <article class="product-card" data-index="3">
+
           <div class="product-card__img">
             <img
               src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=400&q=80"
               alt="Latte Vainilla" />
           </div>
+
           <div class="product-card__body">
             <h4 class="product-card__title">Latte Vainilla</h4>
             <p class="product-card__desc">
@@ -139,215 +200,185 @@
             </p>
             <span class="product-card__price">$7.000</span>
           </div>
+
         </article>
+
       </div>
+
       <div class="productos__cta">
-        <a href="#" class="btn btn--outline btn--lg">Menú Completo</a>
+        <a href="#" class="btn btn--outline btn--lg productos__cta-btn">
+          Menú Completo
+        </a>
       </div>
+
     </div>
   </section>
 
   <!-- Experiencia -->
   <section class="experiencia">
+
     <div class="experiencia__bg"></div>
+
     <div class="container">
+
       <blockquote class="experiencia__quote">
-        <p>
+        <p class="experiencia__text">
           "Creemos que el café es un ritual. Un espacio para conversar,
           crear o simplemente disfrutar del silencio."
         </p>
-        <cite>— Café De La Maison</cite>
+        <cite class="experiencia__author">— Café De La Maison</cite>
       </blockquote>
+
     </div>
+
   </section>
 
   <!-- Testimonios -->
   <section class="testimonios" id="testimonios">
     <div class="container">
+
       <div class="section-header">
         <span class="section-header__label">Testimonios</span>
         <h2 class="section-header__title">
           Lo que dicen nuestros clientes
         </h2>
       </div>
+
       <div class="testimonios__grid">
+
         <div class="testimonial-card">
-          <div class="testimonial-card__avatar">
-            <div class="avatar-circle avatar-circle--brown1"></div>
-          </div>
+
+          <div class="testimonial-card__avatar testimonial-card__avatar--brown1"></div>
+
           <p class="testimonial-card__text">
             "El mejor café de la ciudad, sin duda. El ambiente es mágico y el
             capuchino es simplemente perfecto."
           </p>
-          <strong class="testimonial-card__author">— María
-            Fernández</strong>
+
+          <strong class="testimonial-card__author">
+            — María Fernández
+          </strong>
+
           <div class="testimonial-card__stars">
-            <span class="star"></span><span class="star"></span><span
-              class="star"></span><span class="star"></span><span
-              class="star"></span>
+            <span class="testimonial-card__star"></span>
+            <span class="testimonial-card__star"></span>
+            <span class="testimonial-card__star"></span>
+            <span class="testimonial-card__star"></span>
+            <span class="testimonial-card__star"></span>
           </div>
+
         </div>
+
         <div class="testimonial-card">
-          <div class="testimonial-card__avatar">
-            <div class="avatar-circle avatar-circle--brown2"></div>
-          </div>
+
+          <div class="testimonial-card__avatar testimonial-card__avatar--brown2"></div>
+
           <p class="testimonial-card__text">
             "Llevo 5 años viniendo cada mañana. Es mi lugar favorito para
             comenzar el día con energía y tranquilidad."
           </p>
-          <strong class="testimonial-card__author">— Carlos
-            Mejía</strong>
+
+          <strong class="testimonial-card__author">
+            — Carlos Mejía
+          </strong>
+
           <div class="testimonial-card__stars">
-            <span class="star"></span><span class="star"></span><span
-              class="star"></span><span class="star"></span><span
-              class="star"></span>
+            <span class="testimonial-card__star"></span>
+            <span class="testimonial-card__star"></span>
+            <span class="testimonial-card__star"></span>
+            <span class="testimonial-card__star"></span>
+            <span class="testimonial-card__star"></span>
           </div>
+
         </div>
+
         <div class="testimonial-card">
-          <div class="testimonial-card__avatar">
-            <div class="avatar-circle avatar-circle--gold"></div>
-          </div>
+
+          <div class="testimonial-card__avatar testimonial-card__avatar--gold"></div>
+
           <p class="testimonial-card__text">
             "La atención es impecable. Se nota que cada detalle está pensado
             para que te sientas especial."
           </p>
-          <strong class="testimonial-card__author">— Ana
-            Rodríguez</strong>
+
+          <strong class="testimonial-card__author">
+            — Ana Rodríguez
+          </strong>
+
           <div class="testimonial-card__stars">
-            <span class="star"></span><span class="star"></span><span
-              class="star"></span><span class="star"></span><span
-              class="star"></span>
+            <span class="testimonial-card__star"></span>
+            <span class="testimonial-card__star"></span>
+            <span class="testimonial-card__star"></span>
+            <span class="testimonial-card__star"></span>
+            <span class="testimonial-card__star"></span>
           </div>
+
         </div>
+
       </div>
+
     </div>
   </section>
+  </main>
+  <!-- Footer -->
 
-  <!-- Registro -->
-  <section class="newsletter" id="newsletter">
-    <div class="container">
-      <div class="newsletter__inner">
-        <div class="newsletter__text">
-          <h2>
-            Recibe novedades, promociones exclusivas y eventos
-            especiales.
-          </h2>
-          <p>Únete a nuestra comunidad y vive la experiencia Café De La
-            Maison.</p>
-        </div>
-        <form class="newsletter__form" id="registerForm" novalidate>
-          <div class="form-group">
-            <input
-              type="text"
-              placeholder="Nombre completo"
-              id="regName"
-              required />
-            <span class="form-error" id="errName"></span>
-          </div>
-          <div class="form-group">
-            <input
-              type="email"
-              placeholder="Correo Electrónico"
-              id="regEmail"
-              required />
-            <span class="form-error" id="errEmail"></span>
-          </div>
-          <div class="form-group">
-            <input
-              type="password"
-              placeholder="Contraseña"
-              id="regPass"
-              required />
-            <span class="form-error" id="errPass"></span>
-          </div>
-          <div class="form-group">
-            <input
-              type="password"
-              placeholder="Confirmar contraseña"
-              id="regPassConfirm"
-              required />
-            <span class="form-error" id="errPassConfirm"></span>
-          </div>
-          <button
-            type="submit"
-            class="btn btn--primary btn--full">Registrarme</button>
-          <p class="form-success" id="formSuccess"></p>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- Reservas -->
-  <section class="reservar" id="reservar">
-    <div class="reservar__bg"></div>
-    <div class="container">
-      <div class="reservar__inner">
-        <h2>Vive la experiencia Café De La Maison</h2>
-        <p>Reserva ahora o visítanos hoy mismo</p>
-        <a href="tel:+573000000000" class="btn btn--gold btn--lg">Reservar ahora</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pie de página -->
   <footer class="footer" id="contacto">
     <div class="container">
       <div class="footer__grid">
+
         <div class="footer__brand">
           <p class="footer__logo">Café De La Maison</p>
-          <p>
-            Más que café, una experiencia. Creemos que el café es un ritual. Un
-            momento de pausa en medio del ritmo diario.
-          </p>
+          <p>Más que café, una experiencia. Un momento de pausa en medio del ritmo diario.</p>
           <div class="footer__social">
-            <a href="#" aria-label="Instagram">IG</a>
-            <a href="#" aria-label="Facebook">FB</a>
-            <a href="#" aria-label="Twitter">TW</a>
+            <a href="#" aria-label="Síguenos en Instagram">IG</a>
+            <a href="#" aria-label="Síguenos en Facebook">FB</a>
+            <a href="#" aria-label="Síguenos en Twitter">TW</a>
           </div>
         </div>
-        <div class="footer__links">
+
+        <!-- nav -->
+        <nav class="footer__links" aria-label="Navegación secundaria">
           <h6>Navegación</h6>
           <a href="#historia">Nuestra Historia</a>
           <a href="#productos">Menú</a>
           <a href="#testimonios">Testimonios</a>
           <a href="#newsletter">Registro</a>
-        </div>
-        <div class="footer__contact">
+        </nav>
+
+        <address class="footer__contact">
           <h6>Contacto</h6>
-          <p>Dirección: Calle 45 #12‑30</p>
-          <p>Teléfono: +57 300 000 0000</p>
-          <p>Email: contacto@cafetradicion.com</p>
-          <p>Horario entre semana: 7:00 AM – 8:00 PM</p>
-          <p>Fin de semana: 8:00 AM – 9:00 PM</p>
-        </div>
+          <p>Calle 45 #12‑30</p>
+          <p><a href="tel:+573000000000">+57 300 000 0000</a></p>
+          <p><a href="mailto:contacto@cafetradicion.com">contacto@cafetradicion.com</a></p>
+          <p> Lun–Vie: 7:00 AM – 8:00 PM</p>
+          <p> Sáb–Dom: 8:00 AM – 9:00 PM</p>
+        </address>
+
       </div>
       <div class="footer__bottom">
-        <p>© 2024 Café De La Maison. Todos los derechos reservados.</p>
+        <small>© 2024 Café De La Maison. Todos los derechos reservados.</small>
       </div>
     </div>
   </footer>
 
-  <!-- Modal de acceso -->
-  <div class="modal" id="loginModal">
+  <!-- Modal Login  -->
+  <div class="modal" id="loginModal"
+       role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
     <div class="modal__overlay" id="modalOverlay"></div>
     <div class="modal__box">
-      <button class="modal__close" id="modalClose">&times;</button>
-      <h3>Bienvenido de nuevo</h3>
+      <button class="modal__close" id="modalClose" aria-label="Cerrar modal">
+        &times;
+      </button>
+      <h3 id="modal-titulo">Bienvenido de nuevo</h3>
       <p>Inicia sesión en tu cuenta</p>
       <form class="modal__form" id="loginForm" novalidate>
         <div class="form-group">
-          <input
-            type="email"
-            placeholder="Correo Electrónico"
-            id="loginEmail"
-            required />
+          <input type="email"    id="loginEmail"
+            placeholder="Correo Electrónico" autocomplete="email"            required />
         </div>
         <div class="form-group">
-          <input
-            type="password"
-            placeholder="Contraseña"
-            id="loginPassword"
-            required />
+          <input type="password" id="loginPassword"
+            placeholder="Contraseña"         autocomplete="current-password" required />
         </div>
         <button type="submit" class="btn btn--primary btn--full">Ingresar</button>
       </form>
