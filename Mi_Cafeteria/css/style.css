@@ -511,6 +511,78 @@ h6 { font-size: .75rem; font-weight: 600; letter-spacing: .12em; text-transform:
   gap: 1.5rem;
   margin-bottom: var(--sp-md);
 }
+/* Carrusel productos */
+.productos__carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;           /* clip a la pista */
+}
+
+.productos__carousel .carousel__track {
+  display: flex;
+  gap: 1.5rem;                /* mismo gap que el grid original */
+  transition: transform .5s cubic-bezier(.4, 0, .2, 1);
+}
+
+/* Desktop: 3 slides visibles a la vez */
+.productos__carousel .carousel__slide {
+  flex: 0 0 calc(33.333% - 1rem);  /* 1rem = 2/3 del gap de 1.5rem */
+  min-width: 0;
+}
+
+/* Mobile: 1 slide a la vez */
+@media (max-width: 768px) {
+  .productos__carousel .carousel__slide {
+    flex: 0 0 100%;
+  }
+  .productos__carousel .carousel__track {
+    gap: 0;
+  }
+}
+
+.productos__carousel .carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, .4);
+  background: rgba(0, 0, 0, .35);
+  color: var(--color-blanco);
+  font-size: 20px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transicion), transform var(--transicion);
+  backdrop-filter: blur(4px);
+}
+.productos__carousel .carousel__btn:hover {
+  background: rgba(198, 167, 94, .5);
+  transform: translateY(-50%) scale(1.1);
+}
+.productos__carousel .carousel__btn--prev { left: -16px; }
+.productos__carousel .carousel__btn--next { right: -16px; }
+
+.productos__carousel .carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: .5rem;
+  margin-top: 1.5rem;
+}
+.productos__carousel .carousel__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .3);
+  transition: all var(--transicion);
+}
+.productos__carousel .carousel__dot--active {
+  background: var(--color-acento);
+  width: 24px;
+  border-radius: 4px;
+}
 
 .product-card {
   background: rgba(255, 255, 255, .05);
@@ -665,6 +737,89 @@ h6 { font-size: .75rem; font-weight: 600; letter-spacing: .12em; text-transform:
   color: var(--color-acento);
   font-size: 1rem;
   letter-spacing: 2px;
+}
+
+/* Carrusel testimonios */
+.testimonios .carousel {
+  position: relative;
+  width: 100%;
+}
+
+.testimonios .carousel__viewport {
+  overflow: hidden;           /* clip esencial */
+  width: 100%;
+}
+
+.testimonios .carousel__track {
+  display: flex;
+  transition: transform .5s cubic-bezier(.4, 0, .2, 1);
+}
+
+/* 1 slide visible en mobile, 3 en desktop */
+.testimonios .carousel__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+@media (min-width: 769px) {
+  .testimonios .carousel__slide {
+    flex: 0 0 calc(33.333% - 1rem);
+  }
+  .testimonios .carousel__track {
+    gap: 1.5rem;
+  }
+}
+
+/* Botones: alineados a los lados del viewport, centrados verticalmente */
+.testimonios .carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-secundario);
+  background: var(--color-blanco);
+  color: var(--color-secundario);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background var(--transicion),
+              color      var(--transicion),
+              transform  var(--transicion);
+  box-shadow: var(--sombra-suave);
+}
+.testimonios .carousel__btn:hover {
+  background: var(--color-principal);
+  color: var(--color-blanco);
+  border-color: var(--color-principal);
+  transform: translateY(-50%) scale(1.1);
+}
+.testimonios .carousel__btn--prev { left: -20px; }
+.testimonios .carousel__btn--next { right: -20px; }
+
+/* Dots testimonios */
+.testimonios .carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: .5rem;
+  margin-top: 1.5rem;
+}
+.testimonios .carousel__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(59, 42, 36, .2);
+  transition: all var(--transicion);
+  border: none;
+  cursor: pointer;
+}
+.testimonios .carousel__dot--active {
+  background: var(--color-principal);
+  width: 24px;
+  border-radius: 4px;
 }
 
 
