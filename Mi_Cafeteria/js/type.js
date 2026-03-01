@@ -401,87 +401,81 @@ function initCounter() {
 
 /* Carousel */
 
+function makeCarousel({ window: windowSel, track: trackSel, slide: slideSel,
+                        btnPrev: prevSel, btnNext: nextSel, dot: dotSel,
+                        dotActive, visibleDesktop = 3 }) {
+
+  const windowEl = document.querySelector(windowSel);
+  const track    = document.querySelector(trackSel);
+  const slides   = document.querySelectorAll(slideSel);
+  const btnPrev  = document.querySelector(prevSel);
+  const btnNext  = document.querySelector(nextSel);
+  const dots     = document.querySelectorAll(dotSel);
+
+  if (!track || !slides.length) return;
+
+  let index = 0;
+
+  const visible = () => window.innerWidth > 768 ? visibleDesktop : 1;
+
+  const maxIdx  = () => slides.length - visible();
+
+  function goTo(i) {
+    index = Math.max(0, Math.min(i, maxIdx()));
+
+    const pct = index * (100 / slides.length);
+    track.style.transform = `translateX(-${pct}%)`;
+
+    dots.forEach((d, i) => {
+      d.classList.toggle(dotActive.replace('.', ''), i === index);
+    });
+  }
+
+  btnPrev?.addEventListener('click', () => goTo(index - 1));
+  btnNext?.addEventListener('click', () => goTo(index + 1));
+  dots.forEach((d, i) => d.addEventListener('click', () => goTo(i)));
+
+  // Swipe táctil
+  let tx = 0;
+  track.addEventListener('touchstart', e => { tx = e.changedTouches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend',   e => {
+    const diff = tx - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) goTo(diff > 0 ? index + 1 : index - 1);
+  }, { passive: true });
+
+  window.addEventListener('resize', () => goTo(Math.min(index, maxIdx())), { passive: true });
+
+  goTo(0);
+}
+
 function initCarousel() {
 
-  const carousels = document.querySelectorAll('.carousel');
-  if (!carousels.length) return;
+  // Carrusel de productos
+  makeCarousel({
+    window:         '.productos__carousel-window',
+    track:          '.productos__carousel-track',
+    slide:          '.productos__slide',
+    btnPrev:        '.productos__carousel-btn--prev',
+    btnNext:        '.productos__carousel-btn--next',
+    dot:            '.productos__carousel-dot',
+    dotActive:      '.productos__carousel-dot--active',
+    visibleDesktop: 3
+  });
 
-  carousels.forEach(carousel => {
-
-    // El track puede estar dentro de un viewport o directo en el carousel
-    const viewport = carousel.querySelector('.carousel__viewport');
-    const track    = carousel.querySelector('.carousel__track');
-    const slides   = carousel.querySelectorAll('.carousel__slide');
-    const btnPrev  = carousel.querySelector('.carousel__btn--prev');
-    const btnNext  = carousel.querySelector('.carousel__btn--next');
-    const dots     = carousel.querySelectorAll('.carousel__dot');
-
-    if (!track || slides.length === 0) return;
-
-    let index = 0;
-
-    // Cuántos slides se ven a la vez (1 mobile, 3 desktop)
-    function visibleCount() {
-      return window.innerWidth >= 769 ? 3 : 1;
-    }
-
-    // Máximo índice al que se puede mover
-    function maxIndex() {
-      return Math.max(0, slides.length - visibleCount());
-    }
-
-    function update() {
-
-      // Mover la pista un slide a la vez
-      // Cada slide mide (100% / visibleCount) del viewport
-      const pct = index * (100 / visibleCount());
-      track.style.transform = `translateX(-${pct}%)`;
-
-      // Actualizar dots
-      dots.forEach((dot, i) => {
-        dot.classList.toggle('carousel__dot--active', i === index);
-      });
-
-    }
-
-    function next() {
-      index = index >= maxIndex() ? 0 : index + 1;
-      update();
-    }
-
-    function prev() {
-      index = index <= 0 ? maxIndex() : index - 1;
-      update();
-    }
-
-    btnNext?.addEventListener('click', next);
-    btnPrev?.addEventListener('click', prev);
-
-    dots.forEach((dot, i) => {
-      dot.addEventListener('click', () => {
-        index = Math.min(i, maxIndex());
-        update();
-      });
-    });
-
-    // Swipe táctil
-    let touchStartX = 0;
-    track.addEventListener('touchstart', e => {
-      touchStartX = e.changedTouches[0].clientX;
-    }, { passive: true });
-    track.addEventListener('touchend', e => {
-      const diff = touchStartX - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 40) diff > 0 ? next() : prev();
-    }, { passive: true });
-
-    // Recalcular en resize
-    window.addEventListener('resize', update, { passive: true });
-
-    update();
-
+  // Carrusel de testimonios
+  makeCarousel({
+    window:         '.testimonios__carousel-window',
+    track:          '.testimonios__carousel-track',
+    slide:          '.testimonios__slide',
+    btnPrev:        '.testimonios__carousel-btn--prev',
+    btnNext:        '.testimonios__carousel-btn--next',
+    dot:            '.testimonios__carousel-dot',
+    dotActive:      '.testimonios__carousel-dot--active',
+    visibleDesktop: 3
   });
 
 }
+
 
 
 
