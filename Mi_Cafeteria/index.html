@@ -147,117 +147,109 @@
         </p>
       </div>
 
-      <div class="productos__grid">
+      <!-- Carrusel de productos -->
+      <div class="productos__carousel">
 
-  <!-- CONTENEDOR DEL CARRUSEL -->
-  <div class="carousel productos__carousel">
+        <!-- Ventana: SOLO esto tiene overflow hidden -->
+        <div class="productos__carousel-window">
+          <div class="productos__carousel-track">
 
-    <!-- TRACK -->
-    <div class="carousel__track">
+            <div class="productos__slide">
+              <article class="product-card">
+                <div class="product-card__img">
+                  <img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=400&q=80" alt="Espresso Clásico" />
+                </div>
+                <div class="product-card__body">
+                  <h4 class="product-card__title">Espresso Clásico</h4>
+                  <p class="product-card__desc">Intensidad pura en cada sorbo. Grano de origen único, tostado oscuro.</p>
+                  <span class="product-card__price">$4.500</span>
+                </div>
+              </article>
+            </div>
 
-      <!-- SLIDE 1 -->
-      <div class="carousel__slide">
-        <article class="product-card" data-index="1">
-          <div class="product-card__img">
-            <img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=400&q=80" alt="Espresso Clásico" />
+            <div class="productos__slide">
+              <article class="product-card product-card--featured">
+                <div class="product-card__img">
+                  <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&q=80" alt="Capuchino Artesanal" />
+                </div>
+                <div class="product-card__body">
+                  <h4 class="product-card__title">Capuchino Artesanal</h4>
+                  <p class="product-card__desc">Espuma sedosa y arte latte creado a mano con leche entera.</p>
+                  <span class="product-card__price">$6.500</span>
+                </div>
+              </article>
+            </div>
+
+            <div class="productos__slide">
+              <article class="product-card">
+                <div class="product-card__img">
+                  <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=400&q=80" alt="Latte Vainilla" />
+                </div>
+                <div class="product-card__body">
+                  <h4 class="product-card__title">Latte Vainilla</h4>
+                  <p class="product-card__desc">Suave y aromático. Vainilla natural con nuestro blend exclusivo.</p>
+                  <span class="product-card__price">$7.000</span>
+                </div>
+              </article>
+            </div>
+
+            <div class="productos__slide">
+              <article class="product-card">
+                <div class="product-card__img">
+                  <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&q=80" alt="Cold Brew" />
+                </div>
+                <div class="product-card__body">
+                  <h4 class="product-card__title">Cold Brew</h4>
+                  <p class="product-card__desc">Extracción en frío durante 18 horas. Suave, concentrado y sin acidez.</p>
+                  <span class="product-card__price">$7.500</span>
+                </div>
+              </article>
+            </div>
+
+            <div class="productos__slide">
+              <article class="product-card">
+                <div class="product-card__img">
+                  <img src="https://images.unsplash.com/photo-1485808191679-5f86510bd9d4?w=400&q=80" alt="Macchiato Caramelo" />
+                </div>
+                <div class="product-card__body">
+                  <h4 class="product-card__title">Macchiato Caramelo</h4>
+                  <p class="product-card__desc">Espresso con leche cremosa y toque de caramelo artesanal.</p>
+                  <span class="product-card__price">$8.000</span>
+                </div>
+              </article>
+            </div>
+
+            <div class="productos__slide">
+              <article class="product-card">
+                <div class="product-card__img">
+                  <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=400&q=80" alt="Filtrado de Origen" />
+                </div>
+                <div class="product-card__body">
+                  <h4 class="product-card__title">Filtrado de Origen</h4>
+                  <p class="product-card__desc">Single origin Colombia. Notas frutales y achocolatadas en taza limpia.</p>
+                  <span class="product-card__price">$5.500</span>
+                </div>
+              </article>
+            </div>
+
           </div>
-          <div class="product-card__body">
-            <h4 class="product-card__title">Espresso Clásico</h4>
-            <p class="product-card__desc">Intensidad pura en cada sorbo. Grano de origen único, tostado oscuro.</p>
-            <span class="product-card__price">$4.500</span>
-          </div>
-        </article>
+        </div>
+
+        <!-- Botones -->
+        <button class="productos__carousel-btn productos__carousel-btn--prev" aria-label="Anterior">&#8592;</button>
+        <button class="productos__carousel-btn productos__carousel-btn--next" aria-label="Siguiente">&#8594;</button>
+
+        <!-- Dots -->
+        <div class="productos__carousel-dots">
+          <button class="productos__carousel-dot productos__carousel-dot--active"></button>
+          <button class="productos__carousel-dot"></button>
+          <button class="productos__carousel-dot"></button>
+          <button class="productos__carousel-dot"></button>
+          <button class="productos__carousel-dot"></button>
+          <button class="productos__carousel-dot"></button>
+        </div>
+
       </div>
-
-      <!-- SLIDE 2 -->
-      <div class="carousel__slide">
-        <article class="product-card product-card--featured" data-index="2">
-          <div class="product-card__img">
-            <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&q=80" alt="Capuchino Artesanal" />
-          </div>
-          <div class="product-card__body">
-            <h4 class="product-card__title">Capuchino Artesanal</h4>
-            <p class="product-card__desc">Espuma sedosa y arte latte creado a mano con leche entera.</p>
-            <span class="product-card__price">$6.500</span>
-          </div>
-        </article>
-      </div>
-
-      <!-- SLIDE 3 -->
-      <div class="carousel__slide">
-        <article class="product-card" data-index="3">
-          <div class="product-card__img">
-            <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=400&q=80" alt="Latte Vainilla" />
-          </div>
-          <div class="product-card__body">
-            <h4 class="product-card__title">Latte Vainilla</h4>
-            <p class="product-card__desc">Suave y aromático. Vainilla natural con nuestro blend exclusivo.</p>
-            <span class="product-card__price">$7.000</span>
-          </div>
-        </article>
-      </div>
-
-      <!-- SLIDE 4 -->
-      <div class="carousel__slide">
-        <article class="product-card" data-index="4">
-          <div class="product-card__img">
-            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&q=80" alt="Cold Brew" />
-          </div>
-          <div class="product-card__body">
-            <h4 class="product-card__title">Cold Brew</h4>
-            <p class="product-card__desc">Extracción en frío durante 18 horas. Suave, concentrado y sin acidez.</p>
-            <span class="product-card__price">$7.500</span>
-          </div>
-        </article>
-      </div>
-
-      <!-- SLIDE 5 -->
-      <div class="carousel__slide">
-        <article class="product-card" data-index="5">
-          <div class="product-card__img">
-            <img src="https://images.unsplash.com/photo-1485808191679-5f86510bd9d4?w=400&q=80" alt="Macchiato Caramelo" />
-          </div>
-          <div class="product-card__body">
-            <h4 class="product-card__title">Macchiato Caramelo</h4>
-            <p class="product-card__desc">Espresso con leche cremosa y toque dulce de caramelo artesanal.</p>
-            <span class="product-card__price">$8.000</span>
-          </div>
-        </article>
-      </div>
-
-      <!-- SLIDE 6 -->
-      <div class="carousel__slide">
-        <article class="product-card" data-index="6">
-          <div class="product-card__img">
-            <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=400&q=80" alt="Filtrado de Origen" />
-          </div>
-          <div class="product-card__body">
-            <h4 class="product-card__title">Filtrado de Origen</h4>
-            <p class="product-card__desc">Single origin Colombia. Notas frutales y achocolatadas en taza limpia.</p>
-            <span class="product-card__price">$5.500</span>
-          </div>
-        </article>
-      </div>
-
-    </div>
-
-    <!-- BOTONES -->
-    <button class="carousel__btn carousel__btn--prev" aria-label="Anterior">‹</button>
-    <button class="carousel__btn carousel__btn--next" aria-label="Siguiente">›</button>
-
-    <!-- DOTS -->
-    <div class="carousel__dots">
-      <button class="carousel__dot carousel__dot--active"></button>
-      <button class="carousel__dot"></button>
-      <button class="carousel__dot"></button>
-      <button class="carousel__dot"></button>
-      <button class="carousel__dot"></button>
-      <button class="carousel__dot"></button>
-    </div>
-
-  </div>
-
-</div>
 
       <div class="productos__cta">
         <a href="#" class="btn btn--outline btn--lg productos__cta-btn">
@@ -298,64 +290,117 @@
       </h2>
     </div>
 
-    <!-- Carrusel wrapper -->
-    <div class="carousel" id="carousel">
+    <!-- Carrusel testimonios -->
+    <div class="testimonios__carousel">
 
-      <!-- Viewport: el overflow:hidden va aquí -->
-      <div class="carousel__viewport">
-        <div class="carousel__track" id="carouselTrack">
+      <div class="testimonios__carousel-window">
+        <div class="testimonios__carousel-track">
 
-          <div class="testimonial-card carousel__slide">
-            <div class="testimonial-card__avatar testimonial-card__avatar--brown1"></div>
-            <p class="testimonial-card__text">"El mejor café de la ciudad, sin duda. El ambiente es mágico y el capuchino es simplemente perfecto."</p>
-            <strong class="testimonial-card__author">— María Fernández</strong>
-            <div class="testimonial-card__stars">
-              <span class="testimonial-card__star"></span>
-              <span class="testimonial-card__star"></span>
-              <span class="testimonial-card__star"></span>
-              <span class="testimonial-card__star"></span>
-              <span class="testimonial-card__star"></span>
+          <div class="testimonios__slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__avatar testimonial-card__avatar--brown1"></div>
+              <p class="testimonial-card__text">"El mejor café de la ciudad, sin duda. El ambiente es mágico y el capuchino es simplemente perfecto."</p>
+              <strong class="testimonial-card__author">— María Fernández</strong>
+              <div class="testimonial-card__stars">
+                <span class="testimonial-card__star"></span>
+                <span class="testimonial-card__star"></span>
+                <span class="testimonial-card__star"></span>
+                <span class="testimonial-card__star"></span>
+                <span class="testimonial-card__star"></span>
+              </div>
             </div>
           </div>
 
-          <div class="testimonial-card carousel__slide">
-            <div class="testimonial-card__avatar testimonial-card__avatar--brown2"></div>
-            <p class="testimonial-card__text">"Llevo 5 años viniendo cada mañana. Es mi lugar favorito para comenzar el día con energía y tranquilidad."</p>
-            <strong class="testimonial-card__author">— Carlos Mejía</strong>
-            <div class="testimonial-card__stars">
-              <span class="testimonial-card__star"></span>
-              <span class="testimonial-card__star"></span>
-              <span class="testimonial-card__star"></span>
-              <span class="testimonial-card__star"></span>
-              <span class="testimonial-card__star"></span>
+          <div class="testimonios__slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__avatar testimonial-card__avatar--brown2"></div>
+              <p class="testimonial-card__text">"Llevo 5 años viniendo cada mañana. Es mi lugar favorito para comenzar el día con energía y tranquilidad."</p>
+              <strong class="testimonial-card__author">— Carlos Mejía</strong>
+              <div class="testimonial-card__stars">
+                <span class="testimonial-card__star"></span>
+                <span class="testimonial-card__star"></span>
+                <span class="testimonial-card__star"></span>
+                <span class="testimonial-card__star"></span>
+                <span class="testimonial-card__star"></span>
+              </div>
             </div>
           </div>
 
-          <div class="testimonial-card carousel__slide">
-            <div class="testimonial-card__avatar testimonial-card__avatar--gold"></div>
-            <p class="testimonial-card__text">"La atención es impecable. Se nota que cada detalle está pensado para que te sientas especial."</p>
-            <strong class="testimonial-card__author">— Ana Rodríguez</strong>
-            <div class="testimonial-card__stars">
-              <span class="testimonial-card__star"></span>
-              <span class="testimonial-card__star"></span>
-              <span class="testimonial-card__star"></span>
-              <span class="testimonial-card__star"></span>
-              <span class="testimonial-card__star"></span>
+          <div class="testimonios__slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__avatar testimonial-card__avatar--gold"></div>
+              <p class="testimonial-card__text">"La atención es impecable. Se nota que cada detalle está pensado para que te sientas especial."</p>
+              <strong class="testimonial-card__author">— Ana Rodríguez</strong>
+              <div class="testimonial-card__stars">
+                <span class="testimonial-card__star"></span>
+                <span class="testimonial-card__star"></span>
+                <span class="testimonial-card__star"></span>
+                <span class="testimonial-card__star"></span>
+                <span class="testimonial-card__star"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonios__slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__avatar testimonial-card__avatar--brown1"></div>
+              <p class="testimonial-card__text">"Descubrí este lugar hace un año y ya no puedo imaginar mi semana sin su filtrado de origen. Cada taza es diferente."</p>
+              <strong class="testimonial-card__author">— Juliana Torres</strong>
+              <div class="testimonial-card__stars">
+                <span class="testimonial-card__star"></span>
+                <span class="testimonial-card__star"></span>
+                <span class="testimonial-card__star"></span>
+                <span class="testimonial-card__star"></span>
+                <span class="testimonial-card__star"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonios__slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__avatar testimonial-card__avatar--brown2"></div>
+              <p class="testimonial-card__text">"El cold brew es una obra de arte. Vine de visita a Bogotá y fue lo mejor que probé. Ojalá hubiera uno en mi ciudad."</p>
+              <strong class="testimonial-card__author">— Sebastián Mora</strong>
+              <div class="testimonial-card__stars">
+                <span class="testimonial-card__star"></span>
+                <span class="testimonial-card__star"></span>
+                <span class="testimonial-card__star"></span>
+                <span class="testimonial-card__star"></span>
+                <span class="testimonial-card__star"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonios__slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__avatar testimonial-card__avatar--gold"></div>
+              <p class="testimonial-card__text">"Celebré mi cumpleaños aquí y el equipo nos sorprendió con detalles increíbles. Un lugar que cuida cada experiencia."</p>
+              <strong class="testimonial-card__author">— Laura Gómez</strong>
+              <div class="testimonial-card__stars">
+                <span class="testimonial-card__star"></span>
+                <span class="testimonial-card__star"></span>
+                <span class="testimonial-card__star"></span>
+                <span class="testimonial-card__star"></span>
+                <span class="testimonial-card__star"></span>
+              </div>
             </div>
           </div>
 
         </div>
       </div>
 
-      <!-- Botones fuera del viewport pero dentro del carousel -->
-      <button class="carousel__btn carousel__btn--prev" id="carouselPrev" aria-label="Anterior">‹</button>
-      <button class="carousel__btn carousel__btn--next" id="carouselNext" aria-label="Siguiente">›</button>
+      <!-- Botones -->
+      <button class="testimonios__carousel-btn testimonios__carousel-btn--prev" aria-label="Anterior">&#8592;</button>
+      <button class="testimonios__carousel-btn testimonios__carousel-btn--next" aria-label="Siguiente">&#8594;</button>
 
       <!-- Dots -->
-      <div class="carousel__dots">
-        <button class="carousel__dot carousel__dot--active"></button>
-        <button class="carousel__dot"></button>
-        <button class="carousel__dot"></button>
+      <div class="testimonios__carousel-dots">
+        <button class="testimonios__carousel-dot testimonios__carousel-dot--active"></button>
+        <button class="testimonios__carousel-dot"></button>
+        <button class="testimonios__carousel-dot"></button>
+        <button class="testimonios__carousel-dot"></button>
+        <button class="testimonios__carousel-dot"></button>
+        <button class="testimonios__carousel-dot"></button>
       </div>
 
     </div>
@@ -403,6 +448,7 @@
       </div>
     </div>
   </footer>
+
   <!-- Modal Login  -->
   <div class="modal" id="loginModal"
        role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
@@ -422,11 +468,4 @@
           <input type="password" id="loginPassword"
             placeholder="Contraseña"         autocomplete="current-password" required />
         </div>
-        <button type="submit" class="btn btn--primary btn--full">Ingresar</button>
-      </form>
-    </div>
-  </div>
-
-  <script src="js/type.js"></script>
-</body>
-</html>
+        <button type="submit

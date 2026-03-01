@@ -511,77 +511,83 @@ h6 { font-size: .75rem; font-weight: 600; letter-spacing: .12em; text-transform:
   gap: 1.5rem;
   margin-bottom: var(--sp-md);
 }
-/* Carrusel productos */
+/* ── Carrusel Productos ──────────────────────────────────────── */
 .productos__carousel {
   position: relative;
+  padding: 0 2rem;            /* espacio para los botones laterales */
+  margin-bottom: var(--sp-md);
+}
+
+.productos__carousel-window {
+  overflow: hidden;
   width: 100%;
-  overflow: hidden;           /* clip a la pista */
+  border-radius: var(--radio-lg);
 }
 
-.productos__carousel .carousel__track {
+
+.productos__carousel-track {
   display: flex;
-  gap: 1.5rem;                /* mismo gap que el grid original */
   transition: transform .5s cubic-bezier(.4, 0, .2, 1);
+  will-change: transform;
 }
 
-/* Desktop: 3 slides visibles a la vez */
-.productos__carousel .carousel__slide {
-  flex: 0 0 calc(33.333% - 1rem);  /* 1rem = 2/3 del gap de 1.5rem */
-  min-width: 0;
+/* Cada slide: 1/3 del track en desktop, 100% en mobile */
+.productos__slide {
+  flex: 0 0 33.333%;
+  padding: 0 .75rem;          /* medio gap a cada lado */
+  box-sizing: border-box;
 }
 
-/* Mobile: 1 slide a la vez */
-@media (max-width: 768px) {
-  .productos__carousel .carousel__slide {
-    flex: 0 0 100%;
-  }
-  .productos__carousel .carousel__track {
-    gap: 0;
-  }
-}
-
-.productos__carousel .carousel__btn {
+/* Botones laterales */
+.productos__carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 42px;
-  height: 42px;
+  width: 40px; height: 40px;
   border-radius: 50%;
-  border: 1.5px solid rgba(255, 255, 255, .4);
-  background: rgba(0, 0, 0, .35);
+  background: rgba(0, 0, 0, .4);
+  border: 1.5px solid rgba(255, 255, 255, .3);
   color: var(--color-blanco);
-  font-size: 20px;
-  z-index: 20;
+  font-size: 1.1rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 10;
   transition: background var(--transicion), transform var(--transicion);
   backdrop-filter: blur(4px);
 }
-.productos__carousel .carousel__btn:hover {
-  background: rgba(198, 167, 94, .5);
+.productos__carousel-btn:hover {
+  background: rgba(198, 167, 94, .6);
   transform: translateY(-50%) scale(1.1);
 }
-.productos__carousel .carousel__btn--prev { left: -16px; }
-.productos__carousel .carousel__btn--next { right: -16px; }
+.productos__carousel-btn--prev { left: 0; }
+.productos__carousel-btn--next { right: 0; }
 
-.productos__carousel .carousel__dots {
+/* Dots */
+.productos__carousel-dots {
   display: flex;
   justify-content: center;
   gap: .5rem;
-  margin-top: 1.5rem;
+  margin-top: 1.4rem;
 }
-.productos__carousel .carousel__dot {
-  width: 8px;
-  height: 8px;
+.productos__carousel-dot {
+  width: 8px; height: 8px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, .3);
+  border: none;
+  background: rgba(255, 255, 255, .25);
+  cursor: pointer;
   transition: all var(--transicion);
 }
-.productos__carousel .carousel__dot--active {
+.productos__carousel-dot--active {
   background: var(--color-acento);
   width: 24px;
   border-radius: 4px;
+}
+
+/* Mobile: 1 slide */
+@media (max-width: 768px) {
+  .productos__slide { flex: 0 0 100%; }
+  .productos__carousel { padding: 0 2.5rem; }
 }
 
 .product-card {
@@ -739,87 +745,83 @@ h6 { font-size: .75rem; font-weight: 600; letter-spacing: .12em; text-transform:
   letter-spacing: 2px;
 }
 
-/* Carrusel testimonios */
-.testimonios .carousel {
+/*Carrusel Testimonios */
+.testimonios__carousel {
   position: relative;
+  padding: 0 2rem;
+}
+
+.testimonios__carousel-window {
+  overflow: hidden;
   width: 100%;
 }
 
-.testimonios .carousel__viewport {
-  overflow: hidden;           /* clip esencial */
-  width: 100%;
-}
-
-.testimonios .carousel__track {
+.testimonios__carousel-track {
   display: flex;
   transition: transform .5s cubic-bezier(.4, 0, .2, 1);
+  will-change: transform;
 }
 
-/* 1 slide visible en mobile, 3 en desktop */
-.testimonios .carousel__slide {
-  flex: 0 0 100%;
-  min-width: 0;
+.testimonios__slide {
+  flex: 0 0 33.333%;
+  padding: 0 .75rem;
+  box-sizing: border-box;
 }
 
-@media (min-width: 769px) {
-  .testimonios .carousel__slide {
-    flex: 0 0 calc(33.333% - 1rem);
-  }
-  .testimonios .carousel__track {
-    gap: 1.5rem;
-  }
-}
-
-/* Botones: alineados a los lados del viewport, centrados verticalmente */
-.testimonios .carousel__btn {
+/* Botones */
+.testimonios__carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
+  width: 40px; height: 40px;
   border-radius: 50%;
-  border: 1.5px solid var(--color-secundario);
   background: var(--color-blanco);
+  border: 1.5px solid rgba(59, 42, 36, .2);
   color: var(--color-secundario);
-  font-size: 18px;
+  font-size: 1.1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 10;
+  box-shadow: var(--sombra-suave);
   transition: background var(--transicion),
               color      var(--transicion),
               transform  var(--transicion);
-  box-shadow: var(--sombra-suave);
 }
-.testimonios .carousel__btn:hover {
+.testimonios__carousel-btn:hover {
   background: var(--color-principal);
   color: var(--color-blanco);
   border-color: var(--color-principal);
   transform: translateY(-50%) scale(1.1);
 }
-.testimonios .carousel__btn--prev { left: -20px; }
-.testimonios .carousel__btn--next { right: -20px; }
+.testimonios__carousel-btn--prev { left: 0; }
+.testimonios__carousel-btn--next { right: 0; }
 
-/* Dots testimonios */
-.testimonios .carousel__dots {
+/* Dots */
+.testimonios__carousel-dots {
   display: flex;
   justify-content: center;
   gap: .5rem;
-  margin-top: 1.5rem;
+  margin-top: 1.4rem;
 }
-.testimonios .carousel__dot {
-  width: 8px;
-  height: 8px;
+.testimonios__carousel-dot {
+  width: 8px; height: 8px;
   border-radius: 50%;
-  background: rgba(59, 42, 36, .2);
-  transition: all var(--transicion);
   border: none;
+  background: rgba(59, 42, 36, .2);
   cursor: pointer;
+  transition: all var(--transicion);
 }
-.testimonios .carousel__dot--active {
+.testimonios__carousel-dot--active {
   background: var(--color-principal);
   width: 24px;
   border-radius: 4px;
+}
+
+/* Mobile: 1 slide */
+@media (max-width: 768px) {
+  .testimonios__slide { flex: 0 0 100%; }
+  .testimonios__carousel { padding: 0 2.5rem; }
 }
 
 
