@@ -401,41 +401,50 @@ function initCounter() {
 
 /* Carousel */
 
-function makeCarousel({ window: windowSel, track: trackSel, slide: slideSel,
-                        btnPrev: prevSel, btnNext: nextSel, dot: dotSel,
-                        dotActive, visibleDesktop = 3 }) {
+function makeCarousel(cfg) {
 
-  const windowEl = document.querySelector(windowSel);
-  const track    = document.querySelector(trackSel);
-  const slides   = document.querySelectorAll(slideSel);
-  const btnPrev  = document.querySelector(prevSel);
-  const btnNext  = document.querySelector(nextSel);
-  const dots     = document.querySelectorAll(dotSel);
+  const windowEl = document.querySelector(cfg.windowSel);
+  const track    = document.querySelector(cfg.trackSel);
+  const btnPrev  = document.querySelector(cfg.prevSel);
+  const btnNext  = document.querySelector(cfg.nextSel);
+  const dots     = document.querySelectorAll(cfg.dotSel);
+  const slides   = document.querySelectorAll(cfg.slideSel);
 
-  if (!track || !slides.length) return;
+  if (!windowEl || !track || !slides.length || !btnPrev || !btnNext) {
+    console.warn('[carousel] falta elemento:', cfg.windowSel, {windowEl, track, slides: slides.length, btnPrev, btnNext});
+    return;
+  }
 
   let index = 0;
 
-  const visible = () => window.innerWidth > 768 ? visibleDesktop : 1;
+  const visibleNow = () => window.innerWidth > 768 ? cfg.visibleDesktop : 1;
+  const maxIdx     = () => Math.max(0, slides.length - visibleNow());
 
-  const maxIdx  = () => slides.length - visible();
+  function setWidths() {
+    const w = windowEl.offsetWidth;
+    if (w === 0) {
+      console.warn('[carousel] offsetWidth=0, reintentando...', cfg.windowSel);
+      requestAnimationFrame(setWidths);
+      return;
+    }
+    const slideW = w / visibleNow();
+    console.log('[carousel] setWidths', cfg.windowSel, 'w='+w, 'slideW='+slideW.toFixed(1));
+    slides.forEach(s => { s.style.width = slideW + 'px'; });
+    track.style.width = (slideW * slides.length) + 'px';
+  }
 
   function goTo(i) {
     index = Math.max(0, Math.min(i, maxIdx()));
-
-    const pct = index * (100 / slides.length);
-    track.style.transform = `translateX(-${pct}%)`;
-
-    dots.forEach((d, i) => {
-      d.classList.toggle(dotActive.replace('.', ''), i === index);
-    });
+    const slideW = windowEl.offsetWidth / visibleNow();
+    track.style.transform = `translateX(${-index * slideW}px)`;
+    dots.forEach((d, j) => d.classList.toggle(cfg.dotActiveClass, j === index));
+    console.log('[carousel] goTo', index, 'tx='+(-index*slideW).toFixed(1));
   }
 
-  btnPrev?.addEventListener('click', () => goTo(index - 1));
-  btnNext?.addEventListener('click', () => goTo(index + 1));
+  btnPrev.addEventListener('click', () => goTo(index - 1));
+  btnNext.addEventListener('click', () => goTo(index + 1));
   dots.forEach((d, i) => d.addEventListener('click', () => goTo(i)));
 
-  // Swipe táctil
   let tx = 0;
   track.addEventListener('touchstart', e => { tx = e.changedTouches[0].clientX; }, { passive: true });
   track.addEventListener('touchend',   e => {
@@ -443,34 +452,33 @@ function makeCarousel({ window: windowSel, track: trackSel, slide: slideSel,
     if (Math.abs(diff) > 40) goTo(diff > 0 ? index + 1 : index - 1);
   }, { passive: true });
 
-  window.addEventListener('resize', () => goTo(Math.min(index, maxIdx())), { passive: true });
+  window.addEventListener('resize', () => { setWidths(); goTo(Math.min(index, maxIdx())); }, { passive: true });
 
-  goTo(0);
+  setWidths();
+  requestAnimationFrame(() => goTo(0));
 }
 
 function initCarousel() {
 
-  // Carrusel de productos
   makeCarousel({
-    window:         '.productos__carousel-window',
-    track:          '.productos__carousel-track',
-    slide:          '.productos__slide',
-    btnPrev:        '.productos__carousel-btn--prev',
-    btnNext:        '.productos__carousel-btn--next',
-    dot:            '.productos__carousel-dot',
-    dotActive:      '.productos__carousel-dot--active',
+    windowSel:      '.productos__carousel-window',
+    trackSel:       '.productos__carousel-track',
+    slideSel:       '.productos__slide',
+    prevSel:        '.productos__carousel-btn--prev',
+    nextSel:        '.productos__carousel-btn--next',
+    dotSel:         '.productos__carousel-dot',
+    dotActiveClass: 'productos__carousel-dot--active',
     visibleDesktop: 3
   });
 
-  // Carrusel de testimonios
   makeCarousel({
-    window:         '.testimonios__carousel-window',
-    track:          '.testimonios__carousel-track',
-    slide:          '.testimonios__slide',
-    btnPrev:        '.testimonios__carousel-btn--prev',
-    btnNext:        '.testimonios__carousel-btn--next',
-    dot:            '.testimonios__carousel-dot',
-    dotActive:      '.testimonios__carousel-dot--active',
+    windowSel:      '.testimonios__carousel-window',
+    trackSel:       '.testimonios__carousel-track',
+    slideSel:       '.testimonios__slide',
+    prevSel:        '.testimonios__carousel-btn--prev',
+    nextSel:        '.testimonios__carousel-btn--next',
+    dotSel:         '.testimonios__carousel-dot',
+    dotActiveClass: 'testimonios__carousel-dot--active',
     visibleDesktop: 3
   });
 
@@ -516,5 +524,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmoothAnchors();
   initCounter();
 
+});
+
+window.addEventListener('load', () => {
   initCarousel();
 });
