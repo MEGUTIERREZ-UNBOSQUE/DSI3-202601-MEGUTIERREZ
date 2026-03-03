@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Promesas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="carrera">
+    <h2 class="carrera__titulo">Carrera de promesas</h2>
+
+    <div class="carrera__form">
+      <input class="carrera__input" type="text" id="msg" placeholder="mensaje...">
+      <input class="carrera__input carrera__input--numero" type="number" id="seg" value="2">
+      <button class="carrera__boton" onclick="mostrarMensaje(msg.value, seg.value); ejecutar(seg.value)">Enviar</button>
+    </div>
+
+    <p class="carrera__resultado" id="resultado">esperando...</p>
+  </div>
+
+  <script src="asincronismo.js"></script>
+
+</body>
+</html>
