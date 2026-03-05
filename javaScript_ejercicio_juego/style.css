@@ -1,0 +1,85 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  padding: 40px 20px;
+  max-width: 500px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 24px;
+}
+
+label {
+  display: block;
+  margin-top: 16px;
+  font-weight: bold;
+  color: #444;
+}
+
+input[type="number"] {
+  padding: 8px;
+  font-size: 1rem;
+  width: 80px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: 8px;
+  background-color: #3f6075;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+
+button:hover {
+  background-color: #071824;
+}
+
+#selects-container {
+  margin-top: 20px;
+  background: white;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fila-ronda {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fila-ronda span {
+  width: 70px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+select {
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fafafa;
+}
+
+#btn-calcular {
+  margin-top: 8px;
+  background-color: #203b2c;
+  width: 100%;
+  padding: 10px;
+}
+
+#btn-calcular:hover {
+  background-color: #0b0070;
+}
