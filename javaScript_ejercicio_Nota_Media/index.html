@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Nota Media</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="hoja">
+
+    <h1 class="encabezado__titulo">Nota Media</h1>
+
+    <div class="form__fila">
+      <label class="form__label">N° estudiantes</label>
+      <input class="form__input" type="number" id="numEstudiantes">
+      <button class="boton" onclick="generarInputs()">Evaluar</button>
+    </div>
+
+    <div id="estudiantesContainer"></div>
+
+    <button class="boton boton--calcular" onclick="calcularNotas()">Calcular</button>
+
+  </div>
+
+  <script src="nota.js"></script>
+</body>
+</html>
