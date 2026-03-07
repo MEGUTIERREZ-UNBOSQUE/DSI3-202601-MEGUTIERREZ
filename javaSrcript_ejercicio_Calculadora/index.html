@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Calculadora de Notas</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<main class="pagina">
+
+  <header class="encabezado">
+    <h1 class="encabezado__titulo">Calculadora de Notas</h1>
+    <p class="encabezado__sub">Nota mínima para aprobar: 3.0</p>
+  </header>
+
+  <div class="tabla">
+    <div class="tabla__fila tabla__fila--header">
+      <div class="tabla__celda">Calificación</div>
+      <div class="tabla__celda">1</div>
+      <div class="tabla__celda">2</div>
+      <div class="tabla__celda">3</div>
+      <div class="tabla__celda">4</div>
+      <div class="tabla__celda">5</div>
+      <div class="tabla__celda">6</div>
+      <div class="tabla__celda">7</div>
+      <div class="tabla__celda">8</div>
+    </div>
+    <div class="tabla__fila">
+      <div class="tabla__celda">Ponderación</div>
+      <div class="tabla__celda">5%</div>
+      <div class="tabla__celda">10%</div>
+      <div class="tabla__celda">10%</div>
+      <div class="tabla__celda">10%</div>
+      <div class="tabla__celda">15%</div>
+      <div class="tabla__celda">15%</div>
+      <div class="tabla__celda">15%</div>
+      <div class="tabla__celda">20%</div>
+    </div>
+  </div>
+
+  <div class="inputs" id="inputs"></div>
+
+  <button class="boton" id="btnCalcular">Calcular mi destino académico →</button>
+
+  <div class="resultado" id="resultado" hidden>
+    <p class="resultado__label">Tu nota final es</p>
+    <p class="resultado__nota" id="notaFinal"></p>
+    <p class="resultado__estado" id="estado"></p>
+    <p class="resultado__broma" id="broma"></p>
+    <p class="resultado__minima" id="minima"></p>
+  </div>
+
+</main>
+
+<script src="calculadora.js"></script>
+</body>
+</html>
