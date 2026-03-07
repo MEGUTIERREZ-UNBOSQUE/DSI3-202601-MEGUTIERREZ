@@ -1,0 +1,110 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #333;
+  padding: 32px 20px;
+}
+
+.pagina { max-width: 620px; margin: 0 auto; }
+
+.encabezado { margin-bottom: 24px; }
+.encabezado__titulo { font-size: 1.8rem; margin-bottom: 4px; }
+.encabezado__sub    { font-size: 0.85rem; color: #777; }
+
+.tabla { border: 1px solid #ccc; margin-bottom: 24px; }
+
+.tabla__fila {
+  display: grid;
+  grid-template-columns: 2fr repeat(8, 1fr);
+  border-bottom: 1px solid #ccc;
+}
+.tabla__fila:last-child { border-bottom: none; }
+
+.tabla__celda {
+  padding: 8px 6px;
+  font-size: 0.8rem;
+  text-align: center;
+  border-right: 1px solid #ccc;
+}
+.tabla__celda:first-child { text-align: left; padding-left: 12px; }
+.tabla__celda:last-child  { border-right: none; }
+
+.tabla__fila--header .tabla__celda {
+  background: #e07b30;
+  color: #fff;
+  font-weight: bold;
+}
+
+.inputs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.input-grupo { display: flex; flex-direction: column; gap: 4px; }
+
+.input-grupo__label  { font-size: 0.75rem; color: #555; }
+.input-grupo__ponder { font-size: 0.8rem; color: #e07b30; font-weight: bold; }
+
+.input-grupo__campo {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  text-align: center;
+  width: 100%;
+}
+.input-grupo__campo:focus { outline: none; border-color: #e07b30; }
+
+.boton {
+  width: 100%;
+  padding: 12px;
+  background: #e07b30;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 24px;
+}
+.boton:hover { background: #c0641f; }
+
+.resultado {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-left: 4px solid #e07b30;
+  padding: 20px;
+}
+
+.resultado__label { font-size: 0.75rem; color: #777; margin-bottom: 4px; }
+
+.resultado__nota  { font-size: 3.5rem; font-weight: bold; margin-bottom: 6px; }
+.resultado__nota--aprobado  { color: #2e7d32; }
+.resultado__nota--reprobado { color: #c62828; }
+.resultado__nota--borde     { color: #e07b30; }
+
+.resultado__estado {
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-bottom: 14px;
+  margin-bottom: 14px;
+  border-bottom: 1px dashed #ccc;
+}
+.resultado__estado--aprobado  { color: #2e7d32; }
+.resultado__estado--reprobado { color: #c62828; }
+.resultado__estado--borde     { color: #e07b30; }
+
+.resultado__broma  { font-size: 0.95rem; color: #444; line-height: 1.5; }
+.resultado__broma em { color: #e07b30; font-style: normal; }
+
+.resultado__minima {
+  font-size: 0.75rem;
+  color: #999;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed #ccc;
+}

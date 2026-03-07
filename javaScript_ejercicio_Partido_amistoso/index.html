@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Partido Amistoso</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="hoja">
+
+    <h1 class="encabezado__titulo">Partido Amistoso</h1>
+
+    <div class="form__fila">
+      <label class="form__label">N° de partidos </label>
+      <input class="form__input" type="number" id="numCasos" min="1" max="100">
+      <button class="boton" onclick="generarInputs()">Calcular</button>
+    </div>
+
+    <div id="casosContainer"></div>
+
+    <button class="boton boton--calcular" onclick="calcularPartidos()">Ver resultados</button>
+
+  </div>
+
+  <script src="partido.js"></script>
+</body>
+</html>

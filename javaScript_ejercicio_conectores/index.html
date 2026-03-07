@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Conectores</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main class="pagina">
+    <header class="pagina__encabezado">
+      <h1 class="pagina__titulo">Conectores</h1>
+      <p class="pagina__subtitulo">Verifica si un conector es compatible con un tomacorriente</p>
+    </header>
+
+    <section class="formulario">
+      <label class="formulario__etiqueta" for="numCasos">
+        Número de casos de prueba (1 – 100):
+      </label>
+      <div class="formulario__fila">
+        <input
+          class="formulario__campo"
+          type="number"
+          id="numCasos"
+          min="1"
+          max="100"
+          placeholder="Ej: 3"
+        />
+        <button class="boton boton--primario" id="btnGenerar">Generar casos</button>
+      </div>
+    </section>
+
+    <section class="casos" id="casosContenedor"></section>
+
+    <button class="boton boton--confirmar" id="btnVerificar" hidden>
+      Verificar compatibilidad
+    </button>
+
+    <section class="resultados" id="resultados"></section>
+  </main>
+
+  <script src="conectores.js"></script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;700&display=swap');
+
+:root {
+  --cesped: #2d5a1b;
+  --cesped-claro: #357a20;
+  --cesped-linea: #3d7a25;
+  --blanco: #f0f0f0;
+  --amarillo: #f5d000;
+  --marcador-bg: #0a0a0a;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Barlow Condensed', sans-serif;
+  background-color: var(--cesped);
+  background-image:
+    repeating-linear-gradient(
+      180deg,
+      transparent 0px, transparent 48px,
+      var(--cesped-linea) 48px, var(--cesped-linea) 96px
+    );
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 16px;
+}
+
+/* ── Marcador ── */
+.hoja {
+  background-color: var(--marcador-bg);
+  width: 100%;
+  max-width: 660px;
+  padding: 40px 48px;
+  border: 4px solid #333;
+  box-shadow:
+    0 0 0 2px #555,
+    0 0 40px rgba(0,0,0,0.8),
+    inset 0 0 60px rgba(0,0,0,0.5);
+}
+
+/* ── Encabezado ── */
+.encabezado__titulo {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 3rem;
+  color: var(--amarillo);
+  letter-spacing: 6px;
+  border-bottom: 3px solid #333;
+  padding-bottom: 12px;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+/* ── Formulario ── */
+.form__fila {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.form__label {
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.form__input {
+  background: #111;
+  border: 2px solid #333;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.4rem;
+  color: var(--amarillo);
+  width: 70px;
+  padding: 6px 8px;
+  text-align: center;
+  outline: none;
+  letter-spacing: 2px;
+  transition: border-color 0.2s;
+}
+
+.form__input:focus {
+  border-color: var(--amarillo);
+}
+
+.form__input::placeholder {
+  color: #444;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+}
+
+/* ── Botones ── */
+.boton {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1rem;
+  letter-spacing: 3px;
+  background: #222;
+  color: var(--blanco);
+  border: 2px solid #444;
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.boton:hover {
+  background: var(--amarillo);
+  color: var(--marcador-bg);
+  border-color: var(--amarillo);
+}
+
+.boton--calcular {
+  margin-top: 24px;
+  width: 100%;
+  padding: 14px;
+  font-size: 1.3rem;
+  letter-spacing: 6px;
+  background: var(--cesped);
+  border-color: var(--cesped-claro);
+  color: var(--blanco);
+}
+
+.boton--calcular:hover {
+  background: var(--amarillo);
+  color: var(--marcador-bg);
+}
+
+/* ── Casos ── */
+.estudiante {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #1a1a1a;
+  flex-wrap: wrap;
+}
+
+.estudiante__label {
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #555;
+  min-width: 70px;
+}
+
+.estudiante__notas {
+  display: flex;
+  gap: 8px;
+}
+
+.estudiante__resultado {
+  margin-left: auto;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.4rem;
+  letter-spacing: 3px;
+  color: var(--amarillo);
+}
