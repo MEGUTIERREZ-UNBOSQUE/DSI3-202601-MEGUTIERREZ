@@ -1,8 +1,33 @@
-<h1>bienvenido a el juego</h1>
+<h1>Bienvenido al juego</h1>
+
 <app-header
-        [title]="'quien ganara?'"
-        [description]="'algoritmo que indica quien gano'"
+        [title]="'¿Quién ganará?'"
+        [description]="'Algoritmo que indica quién ganó'"
         [label]="'Ingrese la cantidad de partidos'"
         [actionname]="'Calcular'"
+        (elements)="generateelements($event)" 
 ></app-header>  
 
+@if (elements > 0) {
+  <h1>Cantidad de juegos: {{elements}}</h1>
+  <p>Ingrese en cada opción el equipo ganador:</p>
+
+    @for (item of selecciones; track $index) {
+        <strong>Juego #{{ $index + 1 }}:</strong>
+        
+        <select [(ngModel)]="selecciones[$index]">
+          <option value="" disabled>Seleccione un ganador</option>
+          @for (jugador of jugadores; track jugador) {
+            <option [value]="jugador">{{ jugador }}</option>
+          }
+        </select>
+
+}
+<button (click)="calcularwinner()"> "Calcular ganador"</button>
+@if (ganador != "") {
+        <h1>El ganador es: {{ganador}}</h1>
+}
+
+} @else {
+  <p>Se debe ingresar la cantidad de juegos para comenzar.</p>
+}
