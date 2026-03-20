@@ -1,6 +1,8 @@
-<h4>>{{title}}</h4>
-<p>{{description}}</p>
-<label>{{label}}</label>
-<input type="number" [(ngModel)]="ciclo"/>
-
-<button (click)="calculate()">{{actionname}}</button>
+<div class="header-wrapper">
+  <h4>{{title}}</h4>
+  <p>{{description}}</p>
+  <div class="divider"></div>
+  <label>{{label}}</label>
+  <input type="number" [(ngModel)]="ciclo"/>
+  <button (click)="calculate()"><span>{{actionname}}</span></button>
+</div>

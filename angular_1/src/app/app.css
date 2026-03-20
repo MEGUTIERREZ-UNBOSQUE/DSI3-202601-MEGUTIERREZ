@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap');
+
+/* ─── Nav bar principal ─── */
+.nav-bar {
+  display: flex;
+  align-items: stretch;
+  border-bottom: 4px double #111008;
+  background: #f2ead8;
+  padding: 0 2rem;
+  gap: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-bar::before {
+  content: '▶ SELECCIONE MODO';
+  font-family: 'DM Mono', monospace;
+  font-size: 0.5rem;
+  letter-spacing: 0.3em;
+  color: #6b6050;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  padding-right: 1.5rem;
+  border-right: 1px solid #ccc2aa;
+  margin-right: 1rem;
+  white-space: nowrap;
+}
+
+/* ─── Botones de navegación ─── */
+.nav-bar button {
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: #6b6050;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.25em;
+  padding: 1rem 1.4rem 0.85rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: color 0.15s, border-color 0.15s;
+  position: relative;
+  top: 4px; /* compensa el border-bottom del nav */
+}
+
+.nav-bar button:hover {
+  color: #111008;
+  border-bottom-color: #ccc2aa;
+}
+
+.nav-bar button.active {
+  color: #111008;
+  border-bottom-color: #b5272c;
+}
+
+/* ─── Botón clear ─── */
+.nav-bar button.clear {
+  margin-left: auto;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: #b5272c;
+  padding: 1rem 0 0.85rem;
+}
+
+.nav-bar button.clear:hover {
+  color: #111008;
+  border-bottom-color: transparent;
+}
+
+/* ─── Estado default ─── */
+.default-state {
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.default-state p {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #6b6050;
+  font-style: italic;
+}
+
+.default-state::before {
+  content: '—';
+  display: block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  color: #ccc2aa;
+  margin-bottom: 0.5rem;
+}
