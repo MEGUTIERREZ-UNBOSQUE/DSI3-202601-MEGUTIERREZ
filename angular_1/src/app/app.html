@@ -1,0 +1,19 @@
+<div class="nav-bar">
+  <button (click)="changeOptions(1)" [class.active]="options === 1">Juego</button>
+  <button (click)="changeOptions(2)" [class.active]="options === 2">Mundial</button>
+  <button class="clear" (click)="changeOptions(0)">✕ Clear</button>
+</div>
+
+@switch (options) {
+  @case (1) {
+    <app-game></app-game>
+  }
+  @case (2) {
+    <app-mundial></app-mundial>
+  }
+  @default {
+    <div class="default-state">
+      <p>Seleccione una opción para comenzar</p>
+    </div>
+  }
+}

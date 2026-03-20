@@ -1,0 +1,40 @@
+<div class="masthead">
+  <h1>Bienvenido al <span class="keyword">Juego</span></h1>
+</div>
+<div class="edition-bar">
+  <span>Alice vs Bob</span>
+  <span class="tag">EN JUEGO</span>
+  <span>Partidos</span>
+</div>
+<div class="body-content">
+  <app-header [title]="'¿Quién ganará?'" [description]="'Algoritmo que indica quién ganó'" [label]="'Ingrese la cantidad de partidos'" [actionname]="'Calcular'" (elements)="generateelements($event)"></app-header>
+
+  @if (elements > 0) {
+    <h1>Cantidad de juegos: {{elements}}</h1>
+    <p>Ingrese el ganador de cada partida</p>
+    <div class="games-panel">
+      @for (item of selecciones; track $index) {
+        <div class="game-row">
+          <strong>Juego #{{ $index + 1 }}</strong>
+          <select [(ngModel)]="selecciones[$index]">
+            <option value="" disabled>Seleccione un ganador</option>
+            @for (jugador of jugadores; track jugador) {
+              <option [value]="jugador">{{ jugador }}</option>
+            }
+          </select>
+        </div>
+      }
+    </div>
+    <button (click)="calcularwinner()"><span>Calcular Ganador</span></button>
+    @if (ganador != "") {
+      <div class="winner-panel">
+        <span class="trophy">🏆</span>
+        <h2>{{ ganador }}</h2>
+      </div>
+    }
+  } @else {
+    <div class="empty-state">
+      <p>Ingrese la cantidad de juegos para comenzar</p>
+    </div>
+  }
+</div>
