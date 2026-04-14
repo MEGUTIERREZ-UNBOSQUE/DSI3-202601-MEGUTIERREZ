@@ -1,0 +1,16 @@
+/* Block: input-field */
+.input-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--spacing-md);
+}
+
+/* Element: input-field__label */
+.input-field__label {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-medium);
+  margin-bottom: var(--spacing-xs);
+  font-family: var(--font-family);
+}

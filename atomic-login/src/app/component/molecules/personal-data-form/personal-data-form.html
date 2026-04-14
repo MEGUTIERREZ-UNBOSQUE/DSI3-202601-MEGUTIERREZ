@@ -1,0 +1,18 @@
+<div class="personal-data-form">
+  <div class="personal-data-form__row">
+    <div class="personal-data-form__column">
+      <app-input-field label="Cédula" placeholder="0100010100"></app-input-field>
+    </div>
+    <div class="personal-data-form__column">
+      <app-input-field label="Nombre completo" placeholder="Juan García"></app-input-field>
+    </div>
+  </div>
+
+  <app-input-field label="Correo electrónico" placeholder="usuario@elbosque.edu.co"></app-input-field>
+
+  <app-select-field 
+    label="Carrera" 
+    placeholder="Selecciona una carrera"
+    [options]="careerOptions">
+  </app-select-field>
+</div>

@@ -1,0 +1,7 @@
+/* Block: error-msg */
+.error-msg {
+  color: var(--color-error);
+  font-size: var(--font-size-xs);
+  margin-top: var(--spacing-xs);
+  font-family: var(--font-family);
+}

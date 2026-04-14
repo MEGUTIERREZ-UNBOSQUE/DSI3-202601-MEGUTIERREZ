@@ -1,0 +1,22 @@
+.login-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: #888;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}

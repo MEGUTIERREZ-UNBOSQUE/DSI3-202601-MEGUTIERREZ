@@ -1,0 +1,18 @@
+.register-form {
+  background-color: #2c3e50; /* Color oscuro del wireframe */
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid #34495e;
+  width: 100%;
+  max-width: 400px; /* Tamaño similar al de tu imagen */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.register-form__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}

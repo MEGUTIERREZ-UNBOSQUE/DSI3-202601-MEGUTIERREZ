@@ -1,0 +1,12 @@
+<div class="input-field">
+  <label class="input-field__label" [attr.for]="fieldId">{{ label }}</label>
+  <app-input-field
+    [inputId]="fieldId"
+    [type]="type"
+    [placeholder]="placeholder"
+    [value]="value"
+    [hasError]="!!errorMsg"
+    (valueChange)="valueChange.emit($event)"
+  ></app-input-field>
+  <app-error-message [message]="errorMsg"></app-error-message>
+</div>
