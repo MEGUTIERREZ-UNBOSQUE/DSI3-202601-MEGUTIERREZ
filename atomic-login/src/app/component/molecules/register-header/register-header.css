@@ -11,14 +11,16 @@
 }
 
 .register-header__title {
-  font-size: var(--font-size-lg, 24px);
-  font-weight: bold;
-  color: var(--color-text, #e0e0e0);
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-text-dark);
   margin: 0;
+  font-family: var(--font-family);
 }
 
 .register-header__subtitle {
-  font-size: var(--font-size-sm, 14px);
-  color: var(--color-text-secondary, rgba(224, 224, 224, 0.8));
+  font-size: var(--font-size-sm);
+  color: var(--color-text-medium);
   margin: 4px 0 0 0;
+  font-family: var(--font-family);
 }

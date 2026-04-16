@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LogoComponent } from '../../atoms/app-logo/app-logo'; // Ajusta la ruta según tu proyecto
+import { LogoComponent } from '../../atoms/app-logo/app-logo';
 
 @Component({
   selector: 'app-register-header',
@@ -9,7 +9,4 @@ import { LogoComponent } from '../../atoms/app-logo/app-logo'; // Ajusta la ruta
   templateUrl: './register-header.html',
   styleUrl: './register-header.css'
 })
-export class RegisterHeaderComponent {
-  @Input() title: string = 'Crear cuenta';
-  @Input() subtitle: string = 'Completa el formulario';
-}
+export class RegisterHeaderComponent {}

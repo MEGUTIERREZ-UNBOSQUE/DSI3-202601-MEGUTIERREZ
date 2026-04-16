@@ -1,9 +1,54 @@
 <section class="register-form">
   <app-register-header></app-register-header>
   
-  <app-personal-data-form></app-personal-data-form>
+  <div class="register-form__row">
+    <app-input-field-molecule 
+      label="Cédula" 
+      fieldId="cedula"
+      placeholder="0100010100"
+      class="register-form__column">
+    </app-input-field-molecule>
+    
+    <app-input-field-molecule 
+      label="Nombre completo" 
+      fieldId="nombre"
+      placeholder="Juan García"
+      class="register-form__column">
+    </app-input-field-molecule>
+  </div>
   
+  <app-input-field-molecule 
+    label="Correo electrónico" 
+    fieldId="email"
+    placeholder="usuario@elbosque.edu.co">
+  </app-input-field-molecule>
+  
+  <app-select-field 
+    label="Carrera" 
+    fieldId="career"
+    placeholder="Selecciona una carrera"
+    [value]="selectedCareer"
+    (valueChange)="selectedCareer = $event">
+  </app-select-field>
+  
+  <app-input-field-molecule 
+    label="Contraseña" 
+    fieldId="password"
+    type="password"
+    placeholder="••••••••">
+  </app-input-field-molecule>
+
+  <app-input-field-molecule 
+    label="Confirmar contraseña" 
+    fieldId="confirmPassword"
+    type="password"
+    placeholder="••••••••">
+  </app-input-field-molecule>
+
   <div class="register-form__actions">
-     <app-buttom text="Registrarse"></app-buttom>
+    <app-buttom label="Registrarse"></app-buttom>
+    <p class="register-form__login-link">
+      ¿Ya tienes cuenta? <app-link-text text="Iniciar sesión" href="/"></app-link-text>
+    </p>
   </div>
 </section>

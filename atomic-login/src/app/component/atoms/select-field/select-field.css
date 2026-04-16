@@ -7,22 +7,30 @@
 
 .select-field__label {
   font-size: var(--font-size-sm);
-  color: var(--color-label, #ffd080);
-  margin-bottom: 4px;
+  font-weight: 600;
+  color: var(--color-text-medium);
+  margin-bottom: var(--spacing-xs);
 }
 
 .select-field__input {
   width: 100%;
-  padding: 10px 15px;
-  background-color: transparent;
-  border: 2px solid var(--color-border, #334e5a);
-  border-radius: 8px;
-  color: var(--color-text, #e0e0e0);
+  padding: 10px 14px;
+  background: var(--color-bg-input);
+  border: 1.5px solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-dark);
   font-size: var(--font-size-md);
+  font-family: var(--font-family);
   cursor: pointer;
   outline: none;
 }
 
 .select-field__input:focus {
-  border-color: var(--color-primary, #ffd080);
+  border-color: var(--color-accent-hover);
+  background: var(--color-bg-input-focus);
+}
+
+.select-field__input option {
+  background: var(--color-bg-card);
+  color: var(--color-text-dark);
 }
