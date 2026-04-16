@@ -61,8 +61,23 @@
   padding: 0;
 }
 
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: var(--font-family);
   font-size: var(--font-size-md);
   color: var(--color-text-dark);
+  background: var(--color-bg-page);
+  min-height: 100vh;
+}
+
+app-root {
+  display: block;
+  height: 100%;
+  width: 100%;
 }

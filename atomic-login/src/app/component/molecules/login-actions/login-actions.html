@@ -1,12 +1,11 @@
 <div class="login-actions">
-<app-buttom 
-  label="Ingresar" 
-  [disabled]="loading"
-  (clicked)="onSubmit.emit()">
-  Ingresar
-</app-buttom>
+  <app-buttom 
+    label="Ingresar" 
+    [disabled]="loading"
+    (clicked)="handleClick()">
+  </app-buttom>
   <app-link-text
     text="¿Olvidaste tu contraseña?"
-    href="#"
-  ></app-link-text>
+    href="#">
+  </app-link-text>
 </div>

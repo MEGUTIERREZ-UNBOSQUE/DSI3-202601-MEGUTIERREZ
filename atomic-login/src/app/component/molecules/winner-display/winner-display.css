@@ -1,0 +1,39 @@
+.winner-display {
+  margin-top: 24px;
+  padding: 24px;
+  background: var(--color-bg-card);
+  border: 3px double var(--color-accent);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  position: relative;
+}
+
+.winner-display__label {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-bg-card);
+  padding: 0 16px;
+  font-family: var(--font-family);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 4px;
+  color: var(--color-accent);
+  text-transform: uppercase;
+}
+
+.winner-display__trophy {
+  font-size: 40px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.winner-display__text {
+  font-family: var(--font-family);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-dark);
+  margin: 0;
+  text-transform: uppercase;
+}

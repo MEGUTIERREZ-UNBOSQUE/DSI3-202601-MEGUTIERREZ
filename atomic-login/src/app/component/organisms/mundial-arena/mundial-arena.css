@@ -1,0 +1,94 @@
+.mundial-arena {
+  min-height: 100vh;
+  width: 100%;
+  background: var(--color-bg-page);
+  padding: 24px;
+}
+
+.mundial-arena__header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.mundial-arena__title {
+  font-family: var(--font-family);
+  font-size: 28px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-dark);
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.mundial-arena__subtitle {
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  color: var(--color-accent);
+  margin: 0;
+  letter-spacing: 4px;
+}
+
+.mundial-arena__content {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-card);
+}
+
+.mundial-arena__input-section {
+  margin-bottom: 24px;
+}
+
+.mundial-arena__label {
+  display: block;
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-medium);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.mundial-arena__input-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.mundial-arena__input {
+  width: 150px;
+}
+
+.mundial-arena__section-title {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-dark);
+  margin: 0 0 16px;
+  border-bottom: 2px solid var(--color-primary);
+  padding-bottom: 8px;
+}
+
+.mundial-arena__matches {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 24px;
+  background: var(--color-bg-input);
+}
+
+.mundial-arena__empty {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--color-text-medium);
+  font-family: var(--font-family);
+}
+
+.mundial-arena app-buttom {
+  display: block;
+  margin-bottom: 16px;
+}

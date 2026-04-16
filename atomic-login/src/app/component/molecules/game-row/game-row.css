@@ -1,0 +1,47 @@
+.game-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--color-border);
+  transition: background var(--transition-fast);
+  background: var(--color-bg-card);
+}
+
+.game-row:last-child {
+  border-bottom: none;
+}
+
+.game-row:hover {
+  background: var(--color-bg-input);
+}
+
+.game-row__label {
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-dark);
+  min-width: 80px;
+  text-transform: uppercase;
+}
+
+.game-row__select {
+  flex: 1;
+  background: transparent;
+  color: var(--color-text-dark);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 10px 32px 10px 12px;
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M0 0l6 8 6-8z' fill='%2335747D'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+
+.game-row__select:focus {
+  border-color: var(--color-accent);
+}

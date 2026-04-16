@@ -1,14 +1,20 @@
+:host {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+}
+
 .login-page {
   min-height: 100vh;
-  background-color: #0a0a0a;        /* fondo negro oscuro */
+  width: 100%;
+  background: var(--color-bg-page);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
 }
 
-/* Opcional: le das un poco más de estilo al formulario desde aquí */
 .login-form {
   width: 100%;
   max-width: 420px;
-}
+} 

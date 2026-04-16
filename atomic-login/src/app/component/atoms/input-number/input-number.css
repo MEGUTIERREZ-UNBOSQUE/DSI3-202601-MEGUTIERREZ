@@ -1,0 +1,22 @@
+.input-number {
+  width: 100%;
+  background: transparent;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-family: var(--font-family);
+  font-size: var(--font-size-md);
+  color: var(--color-text-dark);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.input-number:focus {
+  border-color: var(--color-accent);
+}
+
+.input-number::-webkit-inner-spin-button,
+.input-number::-webkit-outer-spin-button {
+  opacity: 0.5;
+  background: var(--color-bg-input);
+}

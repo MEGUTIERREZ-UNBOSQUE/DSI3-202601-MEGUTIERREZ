@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { ButtomComponent } from '../../atoms/buttom/buttom';     // ← nombre correcto
+import { ButtomComponent } from '../../atoms/buttom/buttom';
 import { LinkTextComponent } from '../../atoms/link-text/link-text';
 
 @Component({
@@ -12,4 +12,8 @@ import { LinkTextComponent } from '../../atoms/link-text/link-text';
 export class LoginActionsComponent {
   @Input() loading: boolean = false;
   @Output() onSubmit = new EventEmitter<void>();
+
+  handleClick(): void {
+    this.onSubmit.emit();
+  }
 }

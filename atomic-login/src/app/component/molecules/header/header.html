@@ -1,0 +1,15 @@
+<div class="header">
+  <h4 class="header__title">{{ title }}</h4>
+  <p class="header__description">{{ description }}</p>
+  <div class="header__divider"></div>
+  <label class="header__label">{{ label }}</label>
+  <input 
+    class="header__input" 
+    type="number" 
+    [(ngModel)]="ciclo"
+    min="1"
+  />
+  <button class="header__button" (click)="calculate()">
+    <span>{{ actionname }}</span>
+  </button>
+</div>

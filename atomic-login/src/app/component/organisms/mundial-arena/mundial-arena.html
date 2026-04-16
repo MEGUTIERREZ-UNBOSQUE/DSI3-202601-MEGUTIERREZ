@@ -1,0 +1,62 @@
+<div class="mundial-arena">
+  <div class="mundial-arena__header">
+    <h1 class="mundial-arena__title">Mundial</h1>
+    <p class="mundial-arena__subtitle">Colombia vs Francia</p>
+  </div>
+
+  <div class="mundial-arena__content">
+    <div class="mundial-arena__input-section">
+      <label class="mundial-arena__label">Cantidad de partidos</label>
+      <div class="mundial-arena__input-row">
+        <app-input-number
+          class="mundial-arena__input"
+          [value]="quantity"
+          [min]="1"
+          [max]="100"
+          placeholder="1-100"
+          (valueChange)="quantity = $event">
+        </app-input-number>
+        <app-buttom
+          label="Generar"
+          (clicked)="generateMatches()">
+        </app-buttom>
+      </div>
+    </div>
+
+    @if (matches.length > 0) {
+      <div class="mundial-arena__matches-section">
+        <h2 class="mundial-arena__section-title">Partidos: {{ matches.length }}</h2>
+        
+        <div class="mundial-arena__matches">
+          @for (match of matches; track $index) {
+            <app-match-row
+              [index]="$index"
+              [team1Goals]="match.colombiaGoals"
+              [team2Goals]="match.franciaGoals"
+              team1Name="Colombia"
+              team2Name="Francia"
+              team1Flag="🇨🇴"
+              team2Flag="🇫🇷"
+              (team1GoalsChange)="updateColombiaGoals($index, $event)"
+              (team2GoalsChange)="updateFranciaGoals($index, $event)">
+            </app-match-row>
+          }
+        </div>
+
+        <app-buttom
+          label="Ver Ganador"
+          (clicked)="calculateWinner()">
+        </app-buttom>
+
+        <app-winner-display
+          [winner]="winner"
+          label="CAMPEÓN">
+        </app-winner-display>
+      </div>
+    } @else {
+      <div class="mundial-arena__empty">
+        <p>Ingrese la cantidad de partidos para comenzar</p>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="match-row">
+  <span class="match-row__label">Partido #{{ index + 1 }}</span>
+  <div class="match-row__teams">
+    <div class="match-row__team">
+      <span class="match-row__flag">{{ team1Flag }}</span>
+      <span class="match-row__name">{{ team1Name }}</span>
+      <app-input-number
+        class="match-row__input"
+        [value]="team1Goals"
+        [min]="0"
+        [max]="99"
+        placeholder="0"
+        (valueChange)="team1GoalsChange.emit($event)">
+      </app-input-number>
+    </div>
+    <span class="match-row__vs">VS</span>
+    <div class="match-row__team">
+      <span class="match-row__flag">{{ team2Flag }}</span>
+      <span class="match-row__name">{{ team2Name }}</span>
+      <app-input-number
+        class="match-row__input"
+        [value]="team2Goals"
+        [min]="0"
+        [max]="99"
+        placeholder="0"
+        (valueChange)="team2GoalsChange.emit($event)">
+      </app-input-number>
+    </div>
+  </div>
+</div>

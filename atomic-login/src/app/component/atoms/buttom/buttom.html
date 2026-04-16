@@ -2,7 +2,6 @@
   class="btn"
   [class.btn--primary]="variant === 'primary'"
   [disabled]="disabled"
-  (click)="clicked.emit()"
->
+  (click)="onClick()">
   {{ label }}
 </button>

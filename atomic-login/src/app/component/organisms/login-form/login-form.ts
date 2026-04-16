@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoginHeaderComponent } from '../../molecules/login-header/login-header';
 import { InputFieldMoleculeComponent } from '../../molecules/input-field/input-field';
 import { LoginActionsComponent } from '../../molecules/login-actions/login-actions';
@@ -20,6 +21,8 @@ export class LoginFormComponent {
   emailError: string = '';
   passwordError: string = '';
   loading: boolean = false;
+
+  constructor(private router: Router) {}
 
   handleLogin() {
     this.emailError = '';
@@ -45,7 +48,7 @@ export class LoginFormComponent {
     this.loading = true;
     setTimeout(() => {
       this.loading = false;
-      alert(`Bienvenido, ${this.email}`);
-    }, 1200);
+      this.router.navigate(['/menu']);
+    }, 800);
   }
 }

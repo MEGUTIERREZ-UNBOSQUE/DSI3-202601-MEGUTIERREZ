@@ -1,0 +1,12 @@
+<div class="game-row">
+  <span class="game-row__label">Juego #{{ index + 1 }}</span>
+  <select 
+    class="game-row__select" 
+    [value]="selected"
+    (change)="onSelect($event)">
+    <option value="" disabled>Seleccione un ganador</option>
+    @for (option of options; track option) {
+      <option [value]="option">{{ option }}</option>
+    }
+  </select>
+</div>
