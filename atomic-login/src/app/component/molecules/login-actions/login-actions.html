@@ -2,7 +2,7 @@
   <app-buttom 
     label="Ingresar" 
     [disabled]="loading"
-    (clicked)="handleClick()">
+    (clicked)="onSubmit.emit()">
   </app-buttom>
   <app-link-text
     text="¿Olvidaste tu contraseña?"

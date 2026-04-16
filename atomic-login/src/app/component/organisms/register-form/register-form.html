@@ -45,10 +45,11 @@
     placeholder="••••••••">
   </app-input-field-molecule>
 
-  <div class="register-form__actions">
-    <app-buttom label="Registrarse"></app-buttom>
-    <p class="register-form__login-link">
-      ¿Ya tienes cuenta? <app-link-text text="Iniciar sesión" href="/"></app-link-text>
-    </p>
-  </div>
+<div class="register-form__actions">
+  <app-buttom label="Registrarse"></app-buttom>
+  <p class="register-form__login-link">
+    ¿Ya tienes cuenta? 
+    <span class="register-form__link" (click)="navigateToLogin()">Iniciar sesión</span>
+  </p>
+</div>
 </section>

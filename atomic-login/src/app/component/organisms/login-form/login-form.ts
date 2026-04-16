@@ -51,4 +51,8 @@ export class LoginFormComponent {
       this.router.navigate(['/menu']);
     }, 800);
   }
+
+  navigateToRegister(): void {
+    this.router.navigate(['/register']);
+  }
 }

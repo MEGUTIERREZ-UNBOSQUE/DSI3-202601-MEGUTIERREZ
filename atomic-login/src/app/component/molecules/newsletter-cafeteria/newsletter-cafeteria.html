@@ -1,0 +1,29 @@
+<section class="newsletter" id="newsletter">
+  <div class="container">
+    <div class="newsletter__inner">
+      <div class="newsletter__text">
+        <h2>Únete a nuestra comunidad</h2>
+        <p>Recibe novedades, promociones exclusivas y sé el primero en conocer nuevos productos.</p>
+      </div>
+      
+      <form class="newsletter__form" (submit)="onSubmit()">
+        <div class="form-group">
+          <input type="text" [(ngModel)]="name" name="name" placeholder="Nombre completo" required />
+        </div>
+        <div class="form-group">
+          <input type="email" [(ngModel)]="email" name="email" placeholder="Correo electrónico" required />
+        </div>
+        <div class="form-group">
+          <input type="password" [(ngModel)]="password" name="password" placeholder="Contraseña" required />
+        </div>
+        <div class="form-group">
+          <input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" placeholder="Confirmar contraseña" required />
+        </div>
+        <button type="submit" class="btn btn--primary btn--full">Registrarse</button>
+        @if (successMessage) {
+          <p class="form-success">{{ successMessage }}</p>
+        }
+      </form>
+    </div>
+  </div>
+</section>

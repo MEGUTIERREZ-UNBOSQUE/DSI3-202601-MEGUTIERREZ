@@ -7,16 +7,16 @@
 }
 
 .title {
-  font-size: 22px;
+  font-size: 28px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--color-text-dark);
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: var(--font-family);
 }
 
 .subtitle {
-  font-size: 13px;
-  color: #888;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-medium);
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: var(--font-family);
 }

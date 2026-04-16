@@ -11,7 +11,7 @@
 }
 
 .register-header__title {
-  font-size: var(--font-size-lg);
+  font-size: 28px;
   font-weight: 700;
   color: var(--color-text-dark);
   margin: 0;
@@ -21,6 +21,6 @@
 .register-header__subtitle {
   font-size: var(--font-size-sm);
   color: var(--color-text-medium);
-  margin: 4px 0 0 0;
+  margin: 8px 0 0 0;
   font-family: var(--font-family);
 }

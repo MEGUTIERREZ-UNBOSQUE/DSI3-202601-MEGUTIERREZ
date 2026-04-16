@@ -1,7 +1,32 @@
-<app-select-field 
-  label="Carrera" 
-  fieldId="career"
-  placeholder="Selecciona una carrera"
-  [value]="selectedCareer"
-  (valueChange)="selectedCareer = $event">
-</app-select-field>
+<div class="personal-data-form">
+  <div class="personal-data-form__row">
+    <div class="personal-data-form__column">
+      <app-input-field-molecule 
+        label="Cédula" 
+        fieldId="cedula"
+        placeholder="0100010100">
+      </app-input-field-molecule>
+    </div>
+    <div class="personal-data-form__column">
+      <app-input-field-molecule 
+        label="Nombre completo" 
+        fieldId="nombre"
+        placeholder="Juan García">
+      </app-input-field-molecule>
+    </div>
+  </div>
+
+  <app-input-field-molecule 
+    label="Correo electrónico" 
+    fieldId="email"
+    placeholder="usuario@elbosque.edu.co">
+  </app-input-field-molecule>
+
+  <app-select-field 
+    label="Carrera" 
+    placeholder="Selecciona una carrera"
+    [options]="careerOptions"
+    [value]="selectedCareer"
+    (valueChange)="selectedCareer = $event">
+  </app-select-field>
+</div>

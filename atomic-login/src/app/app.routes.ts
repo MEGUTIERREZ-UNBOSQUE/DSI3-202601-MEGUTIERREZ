@@ -4,6 +4,7 @@ import { RegisterFormComponent } from './component/organisms/register-form/regis
 import { MenuDashboardComponent } from './component/organisms/menu-dashboard/menu-dashboard';
 import { GamePageComponent } from './pages/game-page/game-page';
 import { MundialPageComponent } from './pages/mundial-page/mundial-page';
+import { CafeteriaPageComponent } from './pages/cafeteria-page/cafeteria-page';
 
 export const routes: Routes = [
   { path: '', component: LoginFormComponent, title: 'Iniciar Sesión' },
@@ -11,5 +12,6 @@ export const routes: Routes = [
   { path: 'menu', component: MenuDashboardComponent, title: 'Menú Principal' },
   { path: 'game', component: GamePageComponent, title: 'Game Arena' },
   { path: 'mundial', component: MundialPageComponent, title: 'Mundial' },
+  { path: 'cafeteria', component: CafeteriaPageComponent, title: 'Cafetería' },
   { path: '**', redirectTo: '' }
 ];

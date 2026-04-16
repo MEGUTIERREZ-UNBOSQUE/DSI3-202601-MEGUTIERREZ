@@ -1,7 +1,6 @@
 <div class="login-form">
   <app-login-header></app-login-header>
 
-  <!-- Input Molecule -->
   <app-input-field-molecule
     label="Correo electrónico"
     fieldId="email"
@@ -12,7 +11,6 @@
     (valueChange)="email = $event; emailError = ''"
   ></app-input-field-molecule>
 
-  <!-- Input Molecule -->
   <app-input-field-molecule
     label="Contraseña"
     fieldId="password"
@@ -23,9 +21,13 @@
     (valueChange)="password = $event; passwordError = ''"
   ></app-input-field-molecule>
 
-  <!-- Login Actions -->
   <app-login-actions
     [loading]="loading"
     (onSubmit)="handleLogin()"
   ></app-login-actions>
+
+  <div class="login-form__register-link">
+    ¿No tienes cuenta? 
+    <span class="login-form__link" (click)="navigateToRegister()">Regístrate aquí</span>
+  </div>
 </div>

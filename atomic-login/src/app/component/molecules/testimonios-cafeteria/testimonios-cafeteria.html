@@ -1,0 +1,45 @@
+<section class="testimonios" id="testimonios">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-header__label">Testimonios</span>
+      <h2 class="section-header__title">Lo que dicen nuestros clientes</h2>
+    </div>
+
+    <div class="testimonios__carousel">
+      <div class="testimonios__carousel-row">
+        <button class="testimonios__carousel-btn" (click)="prevSlide()" [disabled]="currentSlide === 0">←</button>
+        
+        <div class="testimonios__carousel-window">
+          <div class="testimonios__carousel-track" [style.transform]="'translateX(-' + (currentSlide * 33.333) + '%)'">
+            @for (testimonial of testimonials; track testimonial.author) {
+              <div class="testimonios__slide">
+                <div class="testimonial-card">
+                  <div class="testimonial-card__avatar" [class]="'testimonial-card__avatar--' + testimonial.avatar"></div>
+                  <p class="testimonial-card__text">{{ testimonial.text }}</p>
+                  <strong class="testimonial-card__author">— {{ testimonial.author }}</strong>
+                  <div class="testimonial-card__stars">
+                    @for (star of getStars(); track $index) {
+                      <span class="testimonial-card__star"></span>
+                    }
+                  </div>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+
+        <button class="testimonios__carousel-btn" (click)="nextSlide()" [disabled]="currentSlide >= testimonials.length - 3">→</button>
+      </div>
+
+      <div class="testimonios__carousel-dots">
+        @for (dot of getDots(); track $index) {
+          <button 
+            class="testimonios__carousel-dot" 
+            [class.testimonios__carousel-dot--active]="currentSlide === $index"
+            (click)="goToSlide($index)">
+          </button>
+        }
+      </div>
+    </div>
+  </div>
+</section>
