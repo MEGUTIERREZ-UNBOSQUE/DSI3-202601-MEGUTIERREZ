@@ -9,4 +9,5 @@ import { Component, Input } from '@angular/core';
 export class PokemonSprite {
   @Input() src: string = '';
   @Input() alt: string = '';
+  @Input() size: string = '6rem';
 }

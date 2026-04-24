@@ -1,10 +1,8 @@
 <div class="pokemon-stats">
-  <h4 class="pokemon-stats__title">ESTADÍSTICAS BASE</h4>
-  <ng-container *ngFor="let stat of pokemon.stats">
-    <app-stat-bar
-      *ngIf="statLabels[stat.stat.name]"
-      [label]="statLabels[stat.stat.name]"
-      [value]="stat.base_stat"
-    />
-  </ng-container>
+  <h4 class="pokemon-stats__title">BASE STATS</h4>
+  <app-stat-bar
+    *ngFor="let stat of pokemon.stats"
+    [label]="getStatLabel(stat.stat.name)"
+    [value]="stat.base_stat"
+  />
 </div>

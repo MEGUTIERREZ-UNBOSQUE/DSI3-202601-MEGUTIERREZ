@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap');
+
 :root {
-  /* Tipografia */
-  --font-main: 'Segoe UI', sans-serif;
+  --font-main: 'Nunito', sans-serif;
   --font-size-xs: 0.625rem;
   --font-size-sm: 0.75rem;
   --font-size-md: 0.875rem;
@@ -15,7 +16,7 @@
   --color-text: #1a1a1a;
   --color-text-muted: #777777;
   --color-accent: #5b8dd9;
-  --color-track: #eeeeee;
+  --color-track: #d0d0d0;
   --color-bar: #6c8ebf;
   --color-shadow: rgba(0, 0, 0, 0.1);
 

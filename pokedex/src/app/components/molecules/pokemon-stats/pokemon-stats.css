@@ -1,7 +1,12 @@
+.pokemon-stats {
+  width: 100%;
+  margin-top: var(--space-md);
+}
+
 .pokemon-stats__title {
-  font-size: var(--font-size-sm);
-  font-weight: bold;
+  font-size: var(--font-size-xs);
+  font-weight: 800;
   margin-bottom: var(--space-sm);
   color: var(--color-text-muted);
-  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }

@@ -1,19 +1,24 @@
 <div class="pokemon-detail">
   <h2 class="pokemon-detail__title">Angular PokeFinder</h2>
-  <p class="pokemon-detail__subtitle">POKEMON DETALLE</p>
+  <p class="pokemon-detail__subtitle">POKEMON DETAIL</p>
   <app-search-bar (searched)="searched.emit($event)" />
 
   <ng-container *ngIf="pokemon">
-    <app-pokemon-sprite
-      [src]="pokemon.sprites.front_default"
-      [alt]="pokemon.name"
-    />
-    <h3 class="pokemon-detail__name">
-      {{ pokemon.name | uppercase }} #{{ pokemon.id | number:'3.0-0' }}
-    </h3>
-    <div class="pokemon-detail__types">
-      <app-pokemon-type-badge *ngFor="let t of pokemon.types" [type]="t.type.name" />
+    <div class="pokemon-detail__card">
+      <div class="pokemon-detail__sprite">
+        <app-pokemon-sprite
+          [src]="pokemon.sprites.front_default"
+          [alt]="pokemon.name"
+          size="10rem"
+        />
+      </div>
+      <h3 class="pokemon-detail__name">
+        {{ pokemon.name | uppercase }} #{{ pokemon.id | number:'3.0-0' }}
+      </h3>
+      <div class="pokemon-detail__types">
+        <app-pokemon-type-badge *ngFor="let t of pokemon.types" [type]="t.type.name" />
+      </div>
+      <app-pokemon-stats [pokemon]="pokemon" />
     </div>
-    <app-pokemon-stats [pokemon]="pokemon" />
   </ng-container>
 </div>

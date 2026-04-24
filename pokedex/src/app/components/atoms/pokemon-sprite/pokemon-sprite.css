@@ -1,5 +1,3 @@
 .pokemon-sprite__img {
-  width: 6rem;
-  height: 6rem;
   object-fit: contain;
 }
