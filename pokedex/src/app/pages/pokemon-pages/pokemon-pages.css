@@ -2,14 +2,18 @@
   display: flex;
   height: 100vh;
   overflow: hidden;
+  background: var(--color-bg);
 }
+
 .layout__detail {
   width: 30%;
-  border-right: 1px solid #e0e0e0;
+  border-right: 1px solid var(--color-border);
+  background: var(--color-white);
   overflow-y: auto;
 }
+
 .layout__grid {
   width: 70%;
-  padding: 16px;
+  padding: var(--space-md);
   overflow-y: auto;
 }

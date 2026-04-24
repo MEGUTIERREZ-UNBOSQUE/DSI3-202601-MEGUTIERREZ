@@ -2,13 +2,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: var(--space-xs);
 }
+
 .pokemon-name__id {
-  font-size: 11px;
-  color: #888;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
 }
+
 .pokemon-name__text {
-  font-size: 13px;
+  font-size: var(--font-size-sm);
   font-weight: bold;
-  text-transform: uppercase;
 }

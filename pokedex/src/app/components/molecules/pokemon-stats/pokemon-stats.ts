@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { StatBar } from '../../atoms/stat-bar/stat-bar';
 import { PokemonDto } from '../../../core/models/pokemon.dto';
 @Component({
   selector: 'app-pokemon-stats',
-  imports: [NgFor, StatBar],
+  imports: [NgFor, NgIf, StatBar],
   templateUrl: './pokemon-stats.html',
   styleUrl: './pokemon-stats.css'
 })

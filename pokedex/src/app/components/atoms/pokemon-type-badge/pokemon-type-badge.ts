@@ -9,4 +9,8 @@ import { UpperCasePipe } from '@angular/common';
 })
 export class PokemonTypeBadge {
   @Input() type: string = '';
-} 
+
+  get color(): string {
+    return `var(--type-${this.type})`;
+  }
+}

@@ -1,29 +1,34 @@
 .stat-bar {
   display: grid;
-  grid-template-columns: 80px 1fr 30px;
+  grid-template-columns: 5rem 1fr 2rem;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 6px;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xs);
 }
+
 .stat-bar__label {
-  font-size: 11px;
+  font-size: var(--font-size-xs);
   font-weight: bold;
   text-transform: uppercase;
-  color: #555;
+  color: var(--color-text-muted);
 }
+
 .stat-bar__track {
-  background: #eee;
-  border-radius: 999px;
-  height: 8px;
+  background: var(--color-track);
+  border-radius: var(--radius-full);
+  height: 0.5rem;
   overflow: hidden;
 }
+
 .stat-bar__fill {
   height: 100%;
-  background: #6c8ebf;
-  border-radius: 999px;
+  background: var(--color-bar);
+  border-radius: var(--radius-full);
   transition: width 0.3s ease;
 }
+
 .stat-bar__value {
-  font-size: 11px;
+  font-size: var(--font-size-xs);
   text-align: right;
+  color: var(--color-text-muted);
 }
