@@ -1,0 +1,8 @@
+.type-badge {
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: bold;
+  background: #ddd;
+  color: #333;
+}

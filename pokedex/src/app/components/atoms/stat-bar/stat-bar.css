@@ -1,0 +1,29 @@
+.stat-bar {
+  display: grid;
+  grid-template-columns: 80px 1fr 30px;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.stat-bar__label {
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #555;
+}
+.stat-bar__track {
+  background: #eee;
+  border-radius: 999px;
+  height: 8px;
+  overflow: hidden;
+}
+.stat-bar__fill {
+  height: 100%;
+  background: #6c8ebf;
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+.stat-bar__value {
+  font-size: 11px;
+  text-align: right;
+}

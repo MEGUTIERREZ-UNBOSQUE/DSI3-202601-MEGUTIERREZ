@@ -1,45 +1,15 @@
 .layout {
   display: flex;
   height: 100vh;
+  overflow: hidden;
 }
-
-.pokemon-grid {
-  width: 70%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 16px;
-  padding: 16px;
+.layout__detail {
+  width: 30%;
+  border-right: 1px solid #e0e0e0;
   overflow-y: auto;
 }
-
-.sidebar {
-  width: 30%;
-  border-right: 1px solid #ccc;
+.layout__grid {
+  width: 70%;
   padding: 16px;
-}
-
-.pokemon-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
-}
-
-.pokemon-card img {
-  width: 96px;
-  height: 96px;
-}
-
-.pokemon-card p {
-  text-transform: capitalize;
-  margin: 4px 0;
-}
-.pokemon-types {
-  display: flex;
-  gap: 6px;
-}
-
-.pokemon-types span {
-  font-size: 12px;
-  text-transform: capitalize;
+  overflow-y: auto;
 }

@@ -1,0 +1,7 @@
+<div class="pokemon-card" (click)="onSelect()">
+  <app-pokemon-sprite [src]="pokemon.sprites.front_default" [alt]="pokemon.name" />
+  <app-pokemon-name [name]="pokemon.name" [id]="pokemon.id" />
+  <div class="pokemon-card__types">
+    <app-pokemon-type-badge *ngFor="let t of pokemon.types" [type]="t.type.name" />
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="pokemon-grid">
+  <h2 class="pokemon-grid__title">GALERÍA DE EXPLORACIÓN</h2>
+  <div class="pokemon-grid__list">
+    <app-pokemon-card
+      *ngFor="let p of pokemons"
+      [pokemon]="p"
+      (selected)="selected.emit($event)"
+    />
+  </div>
+  <div class="pokemon-grid__pagination">
+    <button class="pokemon-grid__btn" (click)="prev.emit()">← Anterior</button>
+    <button class="pokemon-grid__btn" (click)="next.emit()">Siguiente →</button>
+  </div>
+</div>

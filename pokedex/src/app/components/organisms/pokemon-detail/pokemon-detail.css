@@ -1,0 +1,25 @@
+.pokemon-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+}
+.pokemon-detail__title {
+  font-size: 18px;
+  font-weight: bold;
+}
+.pokemon-detail__subtitle {
+  font-size: 12px;
+  font-weight: bold;
+  color: #555;
+}
+.pokemon-detail__name {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+.pokemon-detail__types {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
