@@ -9,4 +9,5 @@ public interface CalculatorService {
     CalculadoraResponseDTO restar(CalculadoraRequestDTO request);
     CalculadoraResponseDTO multiplicar(CalculadoraRequestDTO request);
     CalculadoraResponseDTO dividir(CalculadoraRequestDTO request);
+    CalculadoraResponseDTO convertirMoneda(CalculadoraRequestDTO request);
 }

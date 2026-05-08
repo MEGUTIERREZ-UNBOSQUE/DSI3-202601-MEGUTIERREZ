@@ -46,4 +46,10 @@ public class CalculatorControllerImpl implements CalculatorController {
     public ResponseEntity<CalculadoraResponseDTO> dividir(@RequestBody CalculadoraRequestDTO request) {
         return ResponseEntity.ok(calculatorService.dividir(request));
     }
+
+    @Override
+    @PostMapping("/convertir")
+    public ResponseEntity<CalculadoraResponseDTO> convertirMoneda(@RequestBody CalculadoraRequestDTO request) {
+        return ResponseEntity.ok(calculatorService.convertirMoneda(request));
+    }
 }

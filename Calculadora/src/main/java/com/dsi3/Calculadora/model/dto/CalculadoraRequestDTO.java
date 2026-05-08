@@ -4,6 +4,8 @@ public class CalculadoraRequestDTO {
     private double primerOperando;
     private double segundoOperando;
     private String operacion;
+    private double montoPesos;
+    private String monedaDestino;
 
     public double getPrimerOperando() { return primerOperando; }
     public void setPrimerOperando(double primerOperando) { this.primerOperando = primerOperando; }
@@ -13,4 +15,10 @@ public class CalculadoraRequestDTO {
 
     public String getOperacion() { return operacion; }
     public void setOperacion(String operacion) { this.operacion = operacion; }
+
+    public double getMontoPesos() { return montoPesos; }
+    public void setMontoPesos(double montoPesos) { this.montoPesos = montoPesos; }
+
+    public String getMonedaDestino() { return monedaDestino; }
+    public void setMonedaDestino(String monedaDestino) { this.monedaDestino = monedaDestino; }
 }

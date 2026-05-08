@@ -10,4 +10,5 @@ public interface CalculatorController {
     ResponseEntity<CalculadoraResponseDTO> restar(CalculadoraRequestDTO request);
     ResponseEntity<CalculadoraResponseDTO> multiplicar(CalculadoraRequestDTO request);
     ResponseEntity<CalculadoraResponseDTO> dividir(CalculadoraRequestDTO request);
+    ResponseEntity<CalculadoraResponseDTO> convertirMoneda(CalculadoraRequestDTO request);
 }
