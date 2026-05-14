@@ -8,10 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CalculadoraResponseDTO {
-
     private double resultado;
-    private String operacionRealizada;
-    private String mensaje;
     private int status;
     private boolean exitoso;
 }

@@ -8,8 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class InteresCompuestoRequestDTO {
-
     private double capitalInicial;
-    private double tasaAnual;
-    private int    numeroPeriodos;
+    private double tasaAnual;       
+    private int numeroPeriodos;     
 }

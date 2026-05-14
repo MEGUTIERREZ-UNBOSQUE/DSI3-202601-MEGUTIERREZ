@@ -8,13 +8,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class DivisasResponseDTO {
-
     private double montoOriginal;
-    private double conversionValue;
-    private double conversionRate;
-    private String monedaOrigen;
+    private double resultado;
     private String monedaDestino;
-    private String mensaje;
     private int status;
     private boolean exitoso;
 }
