@@ -4,19 +4,23 @@ import com.dsi3.API_USUARIO.model.dto.UsuarioRequestDTO;
 import com.dsi3.API_USUARIO.model.dto.UsuarioResponseDTO;
 import com.dsi3.API_USUARIO.model.entity.Usuario;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class UsuarioMapper {
-    
-    public Usuario usuariorequestTOUsuario(UsuarioRequestDTO dto){
+
+    public Usuario toEntity(UsuarioRequestDTO dto) {
         return Usuario.builder()
-        .nombre(dto.getNombre())
-        .email(dto.getEmail())
-        .password(dto.getPassword())
-        .build();
+            .nombre(dto.getNombre())
+            .email(dto.getEmail())
+            .password(dto.getPassword())
+            .build();
     }
-    public UsuarioResponseDTO UsuarioTOUsuarioResponseDTO(Usuario model){
+
+    public UsuarioResponseDTO toDTO(Usuario model) {
         return UsuarioResponseDTO.builder()
-        .id(model.getId())
-        .nombre(model.getNombre())
-        .build();
+            .id(model.getId())
+            .nombre(model.getNombre())
+            .build();
     }
 }

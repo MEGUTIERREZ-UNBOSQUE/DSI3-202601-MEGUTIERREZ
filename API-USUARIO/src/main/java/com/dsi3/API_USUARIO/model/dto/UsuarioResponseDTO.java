@@ -7,12 +7,9 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Builder
-@AllArgsConstructor 
+@AllArgsConstructor
 @NoArgsConstructor
-
 public class UsuarioResponseDTO {
-    
+    private Long id;
     private String nombre;
-
-    
 }

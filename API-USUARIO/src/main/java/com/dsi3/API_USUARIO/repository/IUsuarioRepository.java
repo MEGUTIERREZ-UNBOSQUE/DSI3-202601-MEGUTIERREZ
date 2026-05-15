@@ -1,11 +1,9 @@
 package com.dsi3.API_USUARIO.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-
 import com.dsi3.API_USUARIO.model.entity.Usuario;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface IUsuarioRepository extends JpaRepository<Usuario, Long> {
-    
-
-    
 }
