@@ -14,6 +14,7 @@ public class UsuarioMapper {
             .nombre(dto.getNombre())
             .email(dto.getEmail())
             .password(dto.getPassword())
+            .edad(dto.getEdad())
             .build();
     }
 
@@ -21,6 +22,8 @@ public class UsuarioMapper {
         return UsuarioResponseDTO.builder()
             .id(model.getId())
             .nombre(model.getNombre())
+            .email(model.getEmail())
+            .edad(model.getEdad())
             .build();
     }
 }

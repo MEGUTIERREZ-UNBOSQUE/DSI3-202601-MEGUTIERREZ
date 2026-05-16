@@ -9,4 +9,8 @@ import java.util.List;
 public interface IUsuarioService {
     ResponseEntity<UsuarioResponseDTO> crearUsuario(UsuarioRequestDTO request);
     ResponseEntity<List<UsuarioResponseDTO>> obtenerUsuarios();
+    ResponseEntity<UsuarioResponseDTO> actualizarUsuario(Long id, UsuarioRequestDTO request);
+    ResponseEntity<Void> eliminarUsuario(Long id);
+    ResponseEntity<UsuarioResponseDTO> obtenerUsuario(Long id);
+    ResponseEntity<UsuarioResponseDTO> login(UsuarioRequestDTO request);
 }

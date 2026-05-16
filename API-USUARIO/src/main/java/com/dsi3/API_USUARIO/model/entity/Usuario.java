@@ -1,5 +1,6 @@
 package com.dsi3.API_USUARIO.model.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,6 +24,12 @@ public class Usuario {
     private Long id;
 
     private String nombre;
+
+    @Column(unique = true, nullable = false)
     private String email;
+
     private String password;
+
+    private int edad;
+    
 }
