@@ -6,7 +6,6 @@ import com.mesaya.exception.*;
 import com.mesaya.model.entity.Usuario;
 import com.mesaya.repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,8 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class AuthServiceImpl implements IAuthService {
 
     private final UsuarioRepository usuarioRepository;
-    private final BCryptPasswordEncoder passwordEncoder;
-
+    private final PasswordEncoder passwordEncoder; 
     @Override
     @Transactional
     public UsuarioResponse registrar(RegistroRequest dto) {
